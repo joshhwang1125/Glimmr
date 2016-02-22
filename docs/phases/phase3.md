@@ -26,14 +26,12 @@
 * Group
 
 ### Actions
-* ApiActions.receiveAllAlbums(userId) -> triggered by ApiUtil
-* ApiActions.receiveSingleAlbum(albumId)
-* ApiActions.deleteAlbum (only allowed for the owner)
-* NotebookActions.fetchAllAlbums(userId) -> triggers ApiUtil
-* NotebookActions.fetchSingleAlbum(albumId)
-* NotebookActions.createAlbum
-* NotebookActions.editAlbum
-* NotebookActions.destroyAlbum (only allowed for the owner)
+
+* ApiActions.fetchAllAlbums(userId) -> triggers ApiUtil
+* ApiActions.fetchSingleAlbum(albumId)
+* ApiActions.createAlbum
+* ApiActions.editAlbum
+* ApiActions.destroyAlbum (only allowed for the owner)
 
 * ApiActions.receiveAllGroups -> triggered by ApiUtil
 * ApiActions.receiveSingleGroup(groupId)
