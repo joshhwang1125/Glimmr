@@ -65,13 +65,13 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] blank landing page after signin
 - [ ] create photos index layout
 - [ ] create user profile layout
+- [ ] create `Photo` model
 
 ### Phase 2: Photo Model and Flux Initialization (1.5 days)
 
 **Objective:** Photos can be created, read, edited and destroyed through
 the API.
 
-- [ ] create `Photo` model
 - [ ] seed the database with a small amount of test data
 - [ ] CRUD API for photos (`PhotosController`)
 - [ ] setup Webpack & Flux scaffold

@@ -6,7 +6,7 @@ column name     | data type | details
 id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 email           | string    | not null, indexed, unique
-profile_pic     | string    | 
+profile_pic     | string    |
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
@@ -32,13 +32,14 @@ date_taken  | datetime  | not null
 public      | boolean   | not null
 
 
-## photo_comments
+## comments
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
 body        | string    | not null
-photo_id    | integer   | not null, foreign key (references photos), indexed
+type        | integer   | not null (specifies what type of comment)
+foreign_id  | integer   | not null, foreign key (references photos), indexed
 author_id   | integer   | not null, foreign key (references users), indexed
 
 ## favorites
@@ -86,14 +87,6 @@ id          | integer   | not null, primary key
 group_id    | integer   | not null, foreign key (references groups), indexed
 member_id   | integer   | not null, foreign key (references users), indexed
 
-## group_comments
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-title       | string    | not null
-body        | string    | not null
-group_id    | integer   | not null, foreign key (references groups), indexed
-author_id   | integer   | not null, foreign key (references users), indexed
 
 
 ## tags

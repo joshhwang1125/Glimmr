@@ -9,15 +9,15 @@
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
+* PhotosIndex
+  - PhotosIndexItem
 * NoteForm
 
 ### Stores
-* Note
+* Photo
 
 ### Actions
-* ApiActions.receiveAllNotes -> triggered by ApiUtil
+* ApiActions.receiveAllPhotos -> triggered by ApiUtil
 * ApiActions.receiveSingleNote
 * ApiActions.deleteNote
 * NoteActions.fetchAllNotes -> triggers ApiUtil

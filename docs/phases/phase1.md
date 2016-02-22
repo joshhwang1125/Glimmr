@@ -11,6 +11,8 @@
 * Api::PhotosController (create, destroy, index, show, update)
 
 ### Views
+root page (splash)
+
 * users/new.html.erb
 * session/new.html.erb
 * photos/index.json.jbuilder
