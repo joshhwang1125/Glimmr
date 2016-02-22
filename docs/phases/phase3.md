@@ -1,44 +1,60 @@
-# Phase 3: Notebooks and Tags (2 days)
+# Phase 3: Albums and Groups (2 days)
 
 ## Rails
 ### Models
-* Notebook
-* Tag
-* Tagging
+* Album
+* Group
 
 ### Controllers
-* Api::NotebooksController (create, destroy, index, show, update)
+* Api::AlbumsController (create, destroy, index, show, update)
+* Api::GroupsController (create, destroy, index, show, update)
 
 ### Views
-* notebooks/index.json.jbuilder
-* notebooks/show.json.jbuilder
-* tags/show.json.jbuilder
+* albums/show.json.jbuilder (the albums path will be nested the users path)
+* groups/index.json.jbuilder
+* groups/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
-* NotebooksIndex
-  - NotebookIndexItem
-* NotebookForm
-* SearchIndex
+* AlbumsIndex
+- AlbumsIndexItem
+* GroupsIndex
+- GroupsIndexItem
 
 ### Stores
-* Notebook
+* Album
+* Group
 
 ### Actions
-* ApiActions.receiveAllNotebooks -> triggered by ApiUtil
-* ApiActions.receiveSingleNotebook
-* ApiActions.deleteNotebook
-* NotebookActions.fetchAllNotebooks -> triggers ApiUtil
-* NotebookActions.fetchSingleNotebook
-* NotebookActions.createNotebook
-* NotebookActions.editNotebook
-* NotebookActions.destroyNotebook
+* ApiActions.receiveAllAlbums(userId) -> triggered by ApiUtil
+* ApiActions.receiveSingleAlbum(albumId)
+* ApiActions.deleteAlbum (only allowed for the owner)
+* NotebookActions.fetchAllAlbums(userId) -> triggers ApiUtil
+* NotebookActions.fetchSingleAlbum(albumId)
+* NotebookActions.createAlbum
+* NotebookActions.editAlbum
+* NotebookActions.destroyAlbum (only allowed for the owner)
+
+* ApiActions.receiveAllGroups -> triggered by ApiUtil
+* ApiActions.receiveSingleGroup(groupId)
+* ApiActions.deleteGroup (only allowed for the owner)
+* NotebookActions.fetchAllGroups -> triggers ApiUtil
+* NotebookActions.fetchSingleGroup(groupId)
+* NotebookActions.createGroup
+* NotebookActions.editGroup
+* NotebookActions.destroyGroup (only allowed for the owner)
 
 ### ApiUtil
-* ApiUtil.fetchAllNotebooks
-* ApiUtil.fetchSingleNotebook
-* ApiUtil.createNotebook
-* ApiUtil.editNotebook
-* ApiUtil.destroyNotebook
+* ApiUtil.fetchAllAlbums(userId)
+* ApiUtil.fetchSingleAlbum(albumId)
+* ApiUtil.createAlbum
+* ApiUtil.editAlbum
+* ApiUtil.destroyAlbum
+
+* ApiUtil.fetchAllGroups
+* ApiUtil.fetchSingleGroup(groupId)
+* ApiUtil.createGroup
+* ApiUtil.editGroup
+* ApiUtil.destroyGroup
 
 ## Gems/Libraries

@@ -11,27 +11,26 @@
 ### Views (React Components)
 * PhotosIndex
   - PhotosIndexItem
-* NoteForm
 
 ### Stores
 * Photo
 
 ### Actions
 * ApiActions.receiveAllPhotos -> triggered by ApiUtil
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
-* NoteActions.fetchAllNotes -> triggers ApiUtil
-* NoteActions.fetchSingleNote 
-* NoteActions.createNote
-* NoteActions.editNote 
-* NoteActions.destroyNote
+* ApiActions.receiveSinglePhoto
+* ApiActions.deletePhoto
+* NoteActions.fetchAllPhotos -> triggers ApiUtil
+* NoteActions.fetchSinglePhoto
+* NoteActions.createPhoto
+* NoteActions.editPhoto
+* NoteActions.destroyPhoto
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
-* ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.fetchAllPhotos
+* ApiUtil.fetchSinglePhoto
+* ApiUtil.createPhoto
+* ApiUtil.editPhoto
+* ApiUtil.destroyPhoto
 
 ## Gems/Libraries
 * Flux Dispatcher (npm)
