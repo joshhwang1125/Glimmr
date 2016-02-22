@@ -1,23 +1,42 @@
-# FresherNote
+# Glimmr
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Heroku link][heroku]
 
 [heroku]: http://www.herokuapp.com
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
-and React.js. FresherNote allows users to:
+Glimmr is an image sharing web application inspired by Flickr built using Ruby on Rails and React.js. Glimmr allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
-- [ ] Create an account
-- [ ] Log in / Log out
-- [ ] Create, read, edit, and delete notes
-- [ ] Organize notes within Notebooks
-- [ ] Tag notes with multiple tags
-- [ ] Apply complex styling to notes while editing
+- [ ] User creation capabilities with secure authentication
+
+- [ ] Static splash page prompting user to log in, and explanation of site vision
+
+- [ ] Photo uploading, viewing, editing, sharing, deleting capabilties
+
+- [ ] Camera roll - Contains all photos uploaded by user, can be selected and added to album or deleted (shared, downloaded)
+
+- [ ] Tag photo
+
+- [ ] Create and delete comments for photos
+
+- [ ] Follow other users
+
+- [ ] Individual photo view pages
+
+- [ ] Favorite photo - adds to favorites page
+
+- [ ] Search functionality: using tags, uploader, or group
+
+- [ ] Setting locations for photos
+
+- [ ] Navigation in individual photo view page with hotkeys
+
+- [ ] Activity feed page on log in with stream of photos to see and notifications
+
 
 ## Design Docs
 * [View Wireframes][views]
@@ -34,7 +53,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and User Authentication (0.5 days)
+### Phase 1: Backend setup and User Authentication (1.0 days)
 
 **Objective:** Functioning rails project with Authentication
 
@@ -42,92 +61,63 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] create `User` model
 - [ ] authentication
 - [ ] user signup/signin pages
+- [ ] blank splash page
 - [ ] blank landing page after signin
+- [ ] create photos index layout
+- [ ] create user profile layout
 
-### Phase 2: Notes Model, API, and basic APIUtil (1.5 days)
+### Phase 2: Photo Model and Flux Initialization (1.5 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
+**Objective:** Photos can be created, read, edited and destroyed through
 the API.
 
-- [ ] create `Note` model
+- [ ] create `Photo` model
 - [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`NotesController`)
-- [ ] jBuilder views for notes
+- [ ] CRUD API for photos (`PhotosController`)
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
+- [ ] Set up Photo Store
+- [ ] Set up React views for photo Index and IndexItem
+- [ ] Clicking on photo should bring user to photo show page
+- [ ] Style these
 
-### Phase 3: Flux Architecture and Router (1.5 days)
+### Phase 3: Albums and Group (1.5 days)
 
-**Objective:** Notes can be created, read, edited and destroyed with the
-user interface.
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
-- implement each note component, building out the flux loop as needed.
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-- [ ] save Notes to the DB when the form loses focus or is left idle
-  after editing.
+- [ ] create `Album` model
+- [ ] seed the database with a small amount of test data
+- [ ] CRUD API for albums (`AlbumsController`)
+- [ ] create `Group` model
+- [ ] seed the database with a small amount of test data
+- [ ] CRUD API for groups (`GroupsController`)
+- [ ] Both albums and groups will have show pages that have many photos, like the photo index view
+- [ ] Can see users in a group, and make comments on the group.
+- [ ] Photos are destroyed when deleted from any location
 
-### Phase 4: Start Styling (0.5 days)
 
-**Objective:** Existing pages (including singup/signin) will look good.
+### Phase 4: Favorites, Tags, and Followers (1 days)
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
 
-### Phase 5: Notebooks (1 day)
+- [ ] Users can follow other users, and see their profiles
+- [ ] Users can tag their own photos, and these tags will show on the photo show page.
+- [ ] A favorites page will have a photo feed with all favorited photos
 
-**Objective:** Notes belong to Notebooks, and can be viewed by notebook.
 
-- [ ] create `Notebook` model
-- build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
-- Use CSS to style new views
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
+### Phase 5: Styling and Bug Fixing (2 days)
 
-### Phase 6: Tags (1.5 days)
+- [ ] Finish CSS styling
+- [ ] Create seed data and set up environment
+- [ ] Double check that all features work
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
-
-- [ ] create `Tag` model and join table
-- build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
-- [ ] Style new elements
-
-### Phase 7: Allow Complex Styling in Notes (0.5 days)
-
-**objective:** Enable complex styling of notes.
-
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
-
-### Phase 8: Styling Cleanup and Seeding (1 day)
-
-**objective:** Make the site feel more cohesive and awesome.
-
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
-
-### Bonus Features (TBD)
-- [ ] Search through notes for blocks of text
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
+### Bonus: Search and Location (2 day)
+- [ ] Add search bar
+- [ ] Add Locations
+- [ ] Mosiac picture pattern
 - [ ] Multiple sessions
+- [ ] Create the feed
+
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

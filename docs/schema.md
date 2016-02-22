@@ -1,32 +1,100 @@
 # Schema Information
 
-## notes
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-title       | string    | not null
-body        | text      | not null
-author_id   | integer   | not null, foreign key (references users), indexed
-notebook_id | integer   | not null, foreign key (references notebooks), indexed
-archived    | boolean   | not null, default: false
+## users
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+username        | string    | not null, indexed, unique
+email           | string    | not null, indexed, unique
+profile_pic     | string    | 
+password_digest | string    | not null
+session_token   | string    | not null, indexed, unique
 
-## notebooks
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
-title       | string    | not null
-description | string    | 
-
-## reminders
+## followers
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-note_id     | string    | not null, foreign key (references notes), indexed
-date        | datetime  | not null
-type        | string    | not null
-prev_id     | integer   | foreign key (references reminders), indexed
+follower_id | integer   | not null, foreign key (references users), indexed
+
+
+## photos
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+owner_id    | integer   | not null, foreign key (references users), indexed
+title       | string    | not null
+description | string    | not null
+image_url   | string    | not null
+medium_url  | string    | not null
+thumb_url   | string    | not null
+date_taken  | datetime  | not null
+public      | boolean   | not null
+
+
+## photo_comments
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+title       | string    | not null
+body        | string    | not null
+photo_id    | integer   | not null, foreign key (references photos), indexed
+author_id   | integer   | not null, foreign key (references users), indexed
+
+## favorites
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+photo_id    | integer   | not null, foreign key (references photos), indexed
+user_id     | integer   | not null, foreign key (references users), indexed
+
+
+## albums
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+owner_id    | integer   | not null, foreign key (references users), indexed
+title       | string    | not null
+description | string    |
+
+## album_photos
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+album_id    | integer   | not null, foreign key (references albums), indexed
+photo_id    | integer   | not null, foreign key (references photos), indexed
+
+## groups
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+title       | string    | not null
+description | string    |
+
+## group_photos
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+group_id    | integer   | not null, foreign key (references groups), indexed
+photo_id    | integer   | not null, foreign key (references photos), indexed
+
+
+## group_members
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+group_id    | integer   | not null, foreign key (references groups), indexed
+member_id   | integer   | not null, foreign key (references users), indexed
+
+## group_comments
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+title       | string    | not null
+body        | string    | not null
+group_id    | integer   | not null, foreign key (references groups), indexed
+author_id   | integer   | not null, foreign key (references users), indexed
+
 
 ## tags
 column name | data type | details
@@ -38,14 +106,17 @@ name        | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
-note_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
+photo_id    | integer   | not null, foreign key (references photos), indexed, unique [tag_id]
 tag_id      | integer   | not null, foreign key (references tags), indexed
 
-## users
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-username        | string    | not null, indexed, unique
-password_digest | string    | not null
-session_token   | string    | not null, indexed, unique
+## locations
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+photo_id    | integer   | not null, foreign key (references photos), indexed, unique [tag_id]
+lat         | float     | not null
+long        | float     | not null
+
+
+
+
