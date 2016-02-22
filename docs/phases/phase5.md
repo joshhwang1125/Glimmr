@@ -2,9 +2,11 @@
 
 ## Rails
 ### Models
-* Reminder
+* User
+* Photo
 
 ### Controllers
+* UserController (create, new)
 * Api::RemindersController (create, destroy, index, show, update)
 
 ### Views
