@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dcqvnxgiy
+  api_key: '581938264674241'
+  api_secret: CID-E_R8Qm91C7RgCC0QyMXTpPE
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dcqvnxgiy
+  api_key: '581938264674241'
+  api_secret: CID-E_R8Qm91C7RgCC0QyMXTpPE
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dcqvnxgiy
+  api_key: '581938264674241'
+  api_secret: CID-E_R8Qm91C7RgCC0QyMXTpPE
+  enhance_image_tag: true
+  static_image_support: false

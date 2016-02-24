@@ -1,19 +1,21 @@
 var React = require('react');
 var PhotoStore = require('../../stores/photo_store');
 var ApiUtil = require('../../util/api_util.js');
+var CloudinaryUpload = require('../photos/cloudinary_upload');
+var PhotoItem = require('../photos/photo_item');
 
 var Feed = React.createClass({
   getInitialState: function () {
     return { photos: PhotoStore.all() };
   },
 
-  _onChange: function () {
+  _onPhotosChange: function () {
     this.setState({ photos: PhotoStore.all() });
   },
 
   componentDidMount: function () {
-    this.photoListener = PhotoStore.addListener(this._onChange);
-
+    this.photoListener = PhotoStore.addListener(this._onPhotosChange);
+    ApiUtil.fetchAllPhotos();
   },
 
   compomentWillUnmount: function () {
@@ -22,11 +24,16 @@ var Feed = React.createClass({
 
   render: function () {
     return (
-      <div>
-        { this.state.photos.map(function (photo) {
-          return <div key={photo.id}> {photo.description} </div>
-          })
-        }
+      <div className="feed-grid">
+
+          { this.state.photos.map(function (photo) {
+            return <PhotoItem key={photo.id}
+                              photo={photo}
+                              size={300}/>
+            })
+          }
+          <CloudinaryUpload/>
+
       </div>
     );
   }
