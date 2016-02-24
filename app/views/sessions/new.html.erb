@@ -1,0 +1,21 @@
+<form class='auth-form' action="<%= session_url %>" method="post">
+  <%= auth_token %>
+
+  <div class='auth'>
+    <h2>or <a href='/users/new'>sign up</a></h2>
+    <div class='auth-div'>
+
+      <label>
+        <input type="text" name="user[email]" value="email">
+      </label>
+
+      <label>
+        <input type="password" name="user[password]" value="password">
+      </label>
+
+      <input type='submit' value='sign up' />
+
+    </div>
+  <div>
+
+</form>

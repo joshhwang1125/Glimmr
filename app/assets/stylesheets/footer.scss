@@ -1,0 +1,39 @@
+$lightblue: #008AAD;
+
+.foot {
+    background: #212124;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 109px;
+    min-width: 1060px;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+}
+
+.foot ul {
+    padding: 20px;
+    margin: 1em 0;
+}
+
+li.foot-li {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.foot a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+
+.foot a:hover {
+
+  text-decoration: none;
+  color: $lightblue;
+}
+
