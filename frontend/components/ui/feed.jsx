@@ -13,7 +13,7 @@ var Feed = React.createClass({
 
   componentDidMount: function () {
     this.photoListener = PhotoStore.addListener(this._onChange);
-    ApiUtil.fetchAllPhotos();
+
   },
 
   compomentWillUnmount: function () {

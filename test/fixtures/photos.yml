@@ -3,7 +3,7 @@
 # Table name: photos
 #
 #  id          :integer          not null, primary key
-#  owner_id    :integer          not null
+#  user_id     :integer          not null
 #  title       :string           not null
 #  description :text
 #  photo_url   :string           not null

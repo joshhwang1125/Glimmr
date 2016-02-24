@@ -12,5 +12,5 @@ var ApiUtil = {
 };
 
 
-
+window.ApiUtil = ApiUtil;
 module.exports = ApiUtil;

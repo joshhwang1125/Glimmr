@@ -50,13 +50,13 @@ photo_description_samples = [
   "So glad we got a chance to admire this sight again this year. It feels like forever, but it's totally worth the wait. Hoping to be more regular with posting. We'll see what happens!"
 ]
 
-User.create(username: "DrDemo", email: "demo@gmail.com" , password: "demodemo", summary: user_bio_samples.sample)
+user1 = User.create(username: "DrDemo", email: "demo@gmail.com" , password: "demodemo", summary: user_bio_samples.sample)
 
-Photo.create(id: 7, owner_id: 1, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "7.jpg")
-Photo.create(id: 4, owner_id: 1, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "4.jpg")
-Photo.create(id: 5, owner_id: 1, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "5.jpg")
-Photo.create(id: 17, owner_id: 1, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "17.jpg")
-Photo.create(id: 1, owner_id: 1, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "1.jpg")
-Photo.create(id: 18, owner_id: 1, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "18.jpg")
-Photo.create(id: 49, owner_id: 1, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "49.jpg")
-Photo.create(id: 53, owner_id: 1, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "53.jpg")
+Photo.create(id: 7, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "7.jpg")
+Photo.create(id: 4, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "4.jpg")
+Photo.create(id: 5, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "5.jpg")
+Photo.create(id: 17, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "17.jpg")
+Photo.create(id: 1, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "1.jpg")
+Photo.create(id: 18, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "18.jpg")
+Photo.create(id: 49, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "49.jpg")
+Photo.create(id: 53, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "53.jpg")

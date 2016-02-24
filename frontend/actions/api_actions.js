@@ -9,3 +9,6 @@ var ApiActions = {
     });
   }
 };
+
+window.ApiActions = ApiActions;
+module.exports = ApiActions;

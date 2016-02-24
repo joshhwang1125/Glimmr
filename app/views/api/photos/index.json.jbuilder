@@ -1,6 +1,6 @@
 json.array! @photos do |photo|
   json.id photo.id
-  json.owner_id photo.owner_id
+  json.user_id photo.user_id
   json.title photo.title
   json.description photo.description
   json.photo_url photo.photo_url

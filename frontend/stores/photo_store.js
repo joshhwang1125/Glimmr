@@ -1,5 +1,5 @@
 var Store = require('flux/utils').Store,
-    AppDispatcher = require('../dispatcher/dispatcher.js'),
+    AppDispatcher = require('../dispatcher/dispatcher'),
     PhotoStore = new Store(AppDispatcher),
     PhotoConstants = require('../constants/photo_constants');
 

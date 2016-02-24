@@ -6,7 +6,7 @@ var React = require('react'),
     IndexRoute = require('react-router').IndexRoute,
     Feed = require('./components/ui/feed');
 
-window.Dispatcher = require("./dispatcher/Dispatcher");
+window.Dispatcher = require("./dispatcher/dispatcher");
 
 
 var routes = (
