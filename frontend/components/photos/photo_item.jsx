@@ -5,10 +5,22 @@ var React = require('react'),
 var PhotoItem = React.createClass({
   mixins: [History],
 
+  getInitialState: function () {
+    return {
+      favorited: false
+    };
+  },
 
   render: function () {
     var url = "http://res.cloudinary.com/dcqvnxgiy/image/upload/";
     var photoOptions = "w_" + this.props.size + ",h_" + this.props.size + ",c_fill/";
+    var favoriteButton = "";
+
+    if (this.state.favorited) {
+      favoriteButton = (<span className="fa fa-star fa-fw"></span>)
+    } else {
+      favoriteButton = (<span className="fa fa-star-o fa-fw"></span>)
+    };
 
 
     return (
@@ -19,10 +31,10 @@ var PhotoItem = React.createClass({
             <div className="nd-content_inner1">
               <h3 className="nd-title"><span>{this.props.photo.title}</span></h3>
               <span className="nd-icon">
-                <span className="fa fa-commenting-o fa-fw"></span>
+                <span className="fa fa-comment fa-fw"></span>
               </span>
               <span className="nd-icon">
-                <span className="fa fa-star-o fa-fw"></span>
+                {favoriteButton}
               </span>
               <span className="nd-icon">
                 <span className="fa fa-share fa-fw"></span>

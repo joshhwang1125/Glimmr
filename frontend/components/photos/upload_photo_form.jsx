@@ -2,10 +2,10 @@ var React = require('react'),
     LinkedStateMixin = require('react-addons-linked-state-mixin'),
     SessionStore = require('../../stores/session_store.js'),
     ApiUtil = require('../../util/api_util.js'),
-    UploadPhotoButton = require('./upload_photo_button.jsx'),
+    CloudinaryUpload = require('./cloudinary_upload.jsx'),
     History = require('react-router').History;
 
-var UploadPhotoForm = React.createClass({
+var PhotoUploadForm = React.createClass({
   mixins: [History, LinkedStateMixin],
   getInitialState: function () {
     return {
@@ -20,7 +20,7 @@ var UploadPhotoForm = React.createClass({
   },
   handleSubmit: function (e) {
     e.preventDefault();
-    var currentUser = SessionStore.currentUser();
+    var currentUser = currentUserId;
 
     var photoParams = {
       photo: {
@@ -49,7 +49,7 @@ var UploadPhotoForm = React.createClass({
       )
     } else {
       uploadedPhoto = (
-        <UploadPhotoButton savePhotoUrl={this.savePhotoUrl}
+        <CloudinaryUpload savePhotoUrl={this.savePhotoUrl}
                            showUploadedThumbnail={this.showUploadedThumbnail} />
       )
     };
@@ -92,4 +92,4 @@ var UploadPhotoForm = React.createClass({
   }
 });
 
-module.exports = UploadPhotoForm;
+module.exports = PhotoUploadForm;
