@@ -2,10 +2,10 @@ var React = require('react'),
     ApiUtil = require('../../util/api_util.js'),
     CloudinaryUpload = require('./cloudinary_upload.jsx'),
     LinkedStateMixin = require('react-addons-linked-state-mixin'),
-    History = require('react-router').History;
+    hashHistory = require('react-router').hashHistory;
 
 var PhotoUploadForm = React.createClass({
-  mixins: [History, LinkedStateMixin],
+  mixins: [LinkedStateMixin],
   getInitialState: function () {
     return {
       title: "",
@@ -30,7 +30,7 @@ var PhotoUploadForm = React.createClass({
     };
 
     ApiUtil.createPhoto(photoParams);
-    this.history.push("/");
+    hashHistory.push("/");
     //TODO: dont go to root page
   },
   render: function () {
@@ -52,37 +52,37 @@ var PhotoUploadForm = React.createClass({
     };
 
     return (
-      <div className="photo-upload-form">
+      <div id="form-main">
+        <div id="form-div">
         <form onSubmit={this.handleSubmit} id="photo-upload-form">
 
-          <div className="photo-title">
+          <p className="title">
             <input type="text"
                    valueLink={this.linkState("title")}
                    placeholder="Title"
                    id="title"
                    className="validate[required,custom[onlyLetter],
                    length[0,100]] feedback-input" />
-          </div>
+          </p>
 
-          <br/><br/>
-
-          <div className="photo-description">
+          <p className="description">
             <textarea name="text"
                       placeholder="Description"
                       rows="5"
                       valueLink={this.linkState("description")}
                       placeholder="Description"
                       className="validate[required,length[6,300]] feedback-input" />
-          </div>
+          </p>
 
           <br/><br/>{ uploadPhotoButton }<br/><br/>
 
-          <div class="submit">
-            <input type="submit" value="Send" className="button-blue"/>
-            <div class="ease"></div>
+          <div className="submit">
+            <input type="submit" value="Submit" id="button-blue"/>
+            <div className="ease"></div>
           </div>
 
         </form>
+        </div>
       </div>
     );
   }

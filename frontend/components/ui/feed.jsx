@@ -1,13 +1,13 @@
 var React = require('react');
 var PhotoStore = require('../../stores/photo_store');
+var SessionStore = require('../../stores/session_store');
 var ApiUtil = require('../../util/api_util.js');
-var CloudinaryUpload = require('../photos/cloudinary_upload');
-var PhotoUploadForm = require('../photos/photo_upload_form');
 var PhotoItem = require('../photos/photo_item');
+var NavTop = require('./nav_top');
 
 var Feed = React.createClass({
   getInitialState: function () {
-    return { photos: PhotoStore.all() };
+    return { photos: [], currentUser: SessionStore.user() };
   },
 
   _onPhotosChange: function () {
@@ -17,6 +17,7 @@ var Feed = React.createClass({
   componentDidMount: function () {
     this.photoListener = PhotoStore.addListener(this._onPhotosChange);
     ApiUtil.fetchAllPhotos();
+    ApiUtil.fetchCurrentUser(currentUserId);
   },
 
   compomentWillUnmount: function () {
@@ -26,15 +27,16 @@ var Feed = React.createClass({
   render: function () {
     return (
       <div className="feed-grid">
+        <NavTop/>
 
+        <div className="picture-grid">
           { this.state.photos.map(function (photo) {
             return <PhotoItem key={photo.id}
                               photo={photo}
                               size={300}/>
             })
           }
-
-
+        </div>
       </div>
     );
   }

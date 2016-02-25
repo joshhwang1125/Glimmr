@@ -10,10 +10,13 @@ var CloudinaryUpload = React.createClass({
   },
   render: function () {
     return (
-      <div>
-        <button className="button-blue"
-                onClick={this.uploadPhoto}>Upload Image</button>
+
+      <div className="cloudinary">
+        <button id="button-blue"
+          onClick={this.uploadPhoto}>Upload Image</button>
+        <div className="ease"></div>
       </div>
+
     );
   }
 });

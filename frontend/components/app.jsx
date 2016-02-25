@@ -4,7 +4,7 @@ var ApiUtil = require('../util/api_util.js');
 
 var App = React.createClass({
   componentWillMount: function () {
-
+    ApiUtil.fetchAllPhotos();
   },
 
   render: function () {

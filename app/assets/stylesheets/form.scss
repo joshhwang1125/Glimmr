@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 
 #feedback-page{
@@ -11,7 +11,7 @@
   padding-top:0px;
 }
 
-.photo-upload-form {
+#form-div {
   background-color:rgba(72,72,72,0.4);
   padding-left:35px;
   padding-right:35px;
@@ -29,7 +29,7 @@
 
 .feedback-input {
   color:#3c3c3c;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight:500;
   font-size: 18px;
   border-radius: 0;
@@ -48,8 +48,8 @@
 .feedback-input:focus{
   background: #fff;
   box-shadow: 0;
-  border: 3px solid #008AAD;
-  color: #008AAD;
+  border: 3px solid #3498db;
+  color: #3498db;
   outline: none;
   padding: 13px 13px 13px 54px;
 }
@@ -60,19 +60,6 @@
 }
 
 /* Icons ---------------------------------- */
-#title{
-  background-size: 30px 30px;
-  background-position: 11px 8px;
-  background-repeat: no-repeat;
-}
-
-#title:focus{
-  background-size: 30px 30px;
-  background-position: 8px 5px;
-  background-position: 11px 8px;
-  background-repeat: no-repeat;
-}
-
 #name{
   background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
   background-size: 30px 30px;
@@ -88,19 +75,7 @@
   background-repeat: no-repeat;
 }
 
-#email{
-  background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
-  background-size: 30px 30px;
-  background-position: 11px 8px;
-  background-repeat: no-repeat;
-}
 
-#email:focus{
-  background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
-  background-size: 30px 30px;
-  background-position: 11px 8px;
-  background-repeat: no-repeat;
-}
 
 #comment{
   background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
@@ -121,17 +96,13 @@ input:focus, textarea:focus {
   background-color:white;
 }
 
-.upload-preview{
-  padding: 15px;
-}
-
-.button-blue{
-  font-family: 'Open Sans', sans-serif;
+#button-blue{
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   float:left;
   width: 100%;
   border: #fbfbfb solid 4px;
   cursor:pointer;
-  background-color: #008AAD;
+  background-color: #3498db;
   color:white;
   font-size:24px;
   padding-top:22px;
@@ -143,19 +114,18 @@ input:focus, textarea:focus {
   font-weight:700;
 }
 
-.button-blue:hover{
-  background-color: white;
-
+#button-blue:hover{
+  background-color: rgba(0,0,0,0);
   color: #0493bd;
 }
 
 .submit:hover {
-  color: #008AAD;
+  color: #3498db;
 }
 
 .ease {
   width: 0px;
-  height: 74px;
+  height: 82px;
   background-color: #fbfbfb;
   -webkit-transition: .3s ease;
   -moz-transition: .3s ease;

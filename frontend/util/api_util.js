@@ -20,6 +20,15 @@ var ApiUtil = {
       }
     })
   },
+  fetchCurrentUser: function (currentUserId) {
+    $.ajax({
+      url: 'api/users/' + currentUserId,
+      type: 'GET',
+      success: function (user) {
+        ApiActions.receiveCurrentUser(user);
+      }
+    })
+  },
 };
 
 

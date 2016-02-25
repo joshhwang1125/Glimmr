@@ -1,9 +1,8 @@
 var React = require('react'),
     ApiUtil = require('../../util/api_util.js'),
-    History = require('react-router').History;
+    hashHistory = require('react-router').hashHistory;
 
 var PhotoItem = React.createClass({
-  mixins: [History],
 
   getInitialState: function () {
     return {
@@ -39,7 +38,6 @@ var PhotoItem = React.createClass({
               <span className="nd-icon">
                 <span className="fa fa-share fa-fw"></span>
               </span>
-
             </div>
           </div>
         </div>

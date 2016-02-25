@@ -1,25 +1,25 @@
- <form class='auth-form' action="<%= users_url %>" method="post">
-  <%= auth_token %>
 
-  <div class='auth'>
-    <h2>or <a href='/session/new'>sign in</a></h2>
-    <div class='auth-div'>
+<div id="form-main">
+  <div id="form-div">
+    <form class="form" id="form2" action="<%= users_url %>" method="post">
+      <%= auth_token %>
 
-      <label>
-        <input type="text" name="user[email]" value="email">
-      </label>
+      <p class="email">
+        <input name="user[email]" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+      </p>
 
-      <label>
-        <input type="text" name="user[username]" value="username">
-      </label>
+      <p class="username">
+        <input name="user[username]" type="text" class="validate[required,custom[username]] feedback-input" id="username" placeholder="Username" />
+      </p>
 
-      <label>
-        <input type="password" name="user[password]" value="password">
-      </label>
+      <p class="password">
+        <input name="user[password]" type="password" class="feedback-input" id="password" placeholder="Password" />
+      </p>
 
-      <input type='submit' value='sign up' />
 
-    </div>
-  <div>
-
-</form>
+      <div class="submit">
+        <input type="submit" value="get started" id="button-blue"/>
+        <div class="ease"></div>
+      </div>
+    </form>
+  </div>
