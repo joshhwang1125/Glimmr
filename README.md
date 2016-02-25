@@ -95,8 +95,10 @@ the API.
 - [ ] Can see users in a group, and make comments on the group.
 - [ ] Photos are destroyed when deleted from any location
 
+Phase 3.5: Favorites
 
-### Phase 4: Favorites, Tags, and Followers (1 days)
+
+### Phase 4: Followers, Tags (1 days)
 
 
 - [ ] Users can follow other users, and see their profiles

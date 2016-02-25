@@ -8,7 +8,18 @@ var ApiUtil = {
         ApiActions.receiveAllPhotos(photos);
       }
     });
-  }
+  },
+  createPhoto: function (photoParams) {
+    $.ajax({
+      url: 'api/photos',
+      type: 'POST',
+      dataType: 'json',
+      data: photoParams,
+      success: function (photo) {
+        ApiActions.receiveAllPhotos([photo]);
+      }
+    })
+  },
 };
 
 

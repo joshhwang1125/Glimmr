@@ -2,6 +2,7 @@ var React = require('react');
 var PhotoStore = require('../../stores/photo_store');
 var ApiUtil = require('../../util/api_util.js');
 var CloudinaryUpload = require('../photos/cloudinary_upload');
+var PhotoUploadForm = require('../photos/photo_upload_form');
 var PhotoItem = require('../photos/photo_item');
 
 var Feed = React.createClass({
@@ -32,7 +33,7 @@ var Feed = React.createClass({
                               size={300}/>
             })
           }
-          <CloudinaryUpload/>
+
 
       </div>
     );
