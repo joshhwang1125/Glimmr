@@ -9,6 +9,12 @@ PhotoStore.all = function () {
   return _photos.slice();
 };
 
+PhotoStore.find = function (id) {
+  return _photos.slice().filter(function (photo) {
+    return photo.id === parseInt(id);
+  })[0];
+};
+
 PhotoStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case PhotoConstants.ALL_PHOTOS_RECEIVED:

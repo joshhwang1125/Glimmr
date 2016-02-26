@@ -10,6 +10,11 @@ var PhotoItem = React.createClass({
     };
   },
 
+  handleClick: function() {
+    var photo = this.props.photo
+    hashHistory.push("/photos/" + this.props.photo.id);
+  },
+
   render: function () {
     var url = "http://res.cloudinary.com/dcqvnxgiy/image/upload/";
     var photoOptions = "w_" + this.props.size + ",h_" + this.props.size + ",c_fill/";

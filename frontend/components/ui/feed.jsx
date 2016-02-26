@@ -10,33 +10,29 @@ var Feed = React.createClass({
     return { photos: [], currentUser: SessionStore.user() };
   },
 
-  _onPhotosChange: function () {
-    this.setState({ photos: PhotoStore.all() });
-  },
-
   componentDidMount: function () {
     this.photoListener = PhotoStore.addListener(this._onPhotosChange);
     ApiUtil.fetchAllPhotos();
-    ApiUtil.fetchCurrentUser(currentUserId);
+    ApiUtil.fetchCurrentUser(currentUserId); //TODO: remove?
   },
 
-  compomentWillUnmount: function () {
+  componentWillUnmount: function () {
     this.photoListener.remove();
+  },
+
+  _onPhotosChange: function () {
+    this.setState({ photos: PhotoStore.all() });
   },
 
   render: function () {
     return (
       <div className="feed-grid">
-        <NavTop/>
-
-        <div className="picture-grid">
-          { this.state.photos.map(function (photo) {
-            return <PhotoItem key={photo.id}
-                              photo={photo}
-                              size={300}/>
-            })
-          }
-        </div>
+        { this.state.photos.map(function (photo) {
+          return <PhotoItem key={photo.id}
+                            photo={photo}
+                            size={300}/>
+          })
+        }
       </div>
     );
   }

@@ -5,6 +5,7 @@ var React = require('react'),
     App = require('./components/app.jsx'),
     IndexRoute = require('react-router').IndexRoute,
     PhotoUploadForm = require('./components/photos/photo_upload_form'),
+    PhotoShow = require('./components/photos/photo_show'),
     Feed = require('./components/ui/feed');
 
 window.Dispatcher = require("./dispatcher/dispatcher");
@@ -13,7 +14,9 @@ window.Dispatcher = require("./dispatcher/dispatcher");
 var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Feed} />
+    <Route path="photos/:photoId" component={PhotoShow} />
     <Route path="upload" component={PhotoUploadForm} />
+
   </Route>
 );
 

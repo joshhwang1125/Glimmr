@@ -1,8 +1,11 @@
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-.picture-grid {
+.main-grid {
   padding-top: 100px;
+}
+
+.feed-grid {
   font-size: 0;
   display: -ms-flexbox;
   -ms-flex-wrap: wrap;
@@ -12,6 +15,30 @@
   display: -webkit-box;
   display: flex;
 }
+
+.photo-splash {
+  width: 100%;
+  height: 780px;
+  background: #212124;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+
+
+
+.photo-info {
+  width: 100%;
+  height: 780px;
+  background: white;
+
+}
+
+
+
 .photo-thumb {
   -webkit-box-flex: auto;
   -ms-flex: auto;
@@ -134,4 +161,21 @@
 .nd-content .nd-icon:nth-of-type(4) {
   -webkit-transition-delay: 0.25s;
       transition-delay: 0.25s;
+}
+
+.photo-splash {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    background: #212124;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

@@ -20,7 +20,7 @@ var NavTop = React.createClass({
   },
 
   componentDidMount: function () {
-    this.sessionListener = SessionStore.addListener(this._onPhotosChange);
+    this.sessionListener = SessionStore.addListener(this._onSessionChange);
     ApiUtil.fetchCurrentUser(currentUserId);
   },
 

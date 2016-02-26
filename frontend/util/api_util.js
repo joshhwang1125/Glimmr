@@ -9,7 +9,26 @@ var ApiUtil = {
       }
     });
   },
+  fetchSinglePhoto: function(photoId){
+    $.ajax({
+      url: "api/photos" + photoId,
+      success: function(photo){
+        ApiActions.receiveAllPhotos([photo]);
+      }
+    });
+  },
   createPhoto: function (photoParams) {
+    $.ajax({
+      url: 'api/photos',
+      type: 'POST',
+      dataType: 'json',
+      data: photoParams,
+      success: function (photo) {
+        ApiActions.receiveAllPhotos([photo]);
+      }
+    })
+  },
+  editPhoto: function (photoParams) {
     $.ajax({
       url: 'api/photos',
       type: 'POST',

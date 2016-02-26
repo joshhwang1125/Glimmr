@@ -4,14 +4,14 @@ var SessionConstants = require('../constants/session_constants');
 
 var ApiActions = {
   receiveAllPhotos: function (photos) {
-    Dispatcher.dispatch({
+    AppDispatcher.dispatch({
       actionType: PhotoConstants.ALL_PHOTOS_RECEIVED,
       photos: photos
     });
   },
 
   receiveCurrentUser: function (user) {
-    Dispatcher.dispatch({
+    AppDispatcher.dispatch({
       actionType: SessionConstants.CURRENT_USER_RECEIVED,
       user: user
     });
