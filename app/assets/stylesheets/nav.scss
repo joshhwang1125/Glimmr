@@ -20,11 +20,11 @@ ul, li, h1, h2, h3, h4, h5, h6, p, a, .logo {
 
 
 
+
 #splashnav {
   position: fixed;
   width: 100%;
   padding-top: 10px;
-  padding-bottom: 10px;
   top: 0;
   background: #000;
   transition: 0.7s all;
@@ -40,8 +40,9 @@ nav {
 }
 
 .navigation ul {
-  float: right;
-  margin-right: 100px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 350px;
 }
 
 .navigation li {

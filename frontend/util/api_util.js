@@ -48,6 +48,15 @@ var ApiUtil = {
       }
     })
   },
+  fetchUser: function (UserId) {
+    $.ajax({
+      url: 'api/users/' + UserId,
+      type: 'GET',
+      success: function (user) {
+        ApiActions.receiveUser(user);
+      }
+    })
+  },
 };
 
 

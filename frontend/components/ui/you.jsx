@@ -3,7 +3,7 @@ var React = require('react'),
 
 var You = React.createClass({
   onClick: function () {
-    hashHistory.push("/");
+    hashHistory.push("users/" + currentUserId);
   },
   render: function () {
     return (

@@ -1,6 +1,7 @@
 var Store = require('flux/utils').Store,
     AppDispatcher = require('../dispatcher/dispatcher.js'),
-    UserStore = new Store(AppDispatcher);
+    UserStore = new Store(AppDispatcher),
+    UserConstants = require('../constants/user_constants');
 
 var _user = {};
 
@@ -14,11 +15,14 @@ UserStore.user = function () {
 
 UserStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
-    case UserConstants.RECEIVE_SINGLE_USER:
+    case UserConstants.USER_RECEIVED:
       resetUser(payload.user);
+      console.log(payload.user);
       UserStore.__emitChange();
       break;
   }
 };
+
+window.UserStore = UserStore;
 
 module.exports = UserStore;

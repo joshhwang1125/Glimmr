@@ -16,7 +16,6 @@ SessionStore.user = function () {
 SessionStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case SessionConstants.CURRENT_USER_RECEIVED:
-
       resetCurrentUser(payload.user);
       SessionStore.__emitChange();
       break;

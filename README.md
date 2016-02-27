@@ -82,7 +82,15 @@ the API.
 - [ ] Clicking on photo should bring user to photo show page
 - [ ] Style these
 
-### Phase 3: Albums and Group (1.5 days)
+### Phase 3: favorites, followers, comments (1 days)
+
+
+- [ ] Users can follow other users, and see their profiles
+- [ ] Users can tag their own photos, and these tags will show on the photo show page.
+- [ ] A favorites page will have a photo feed with all favorited photos
+
+
+### Phase 4: Albums and Group tags location (1.5 days)
 
 
 - [ ] create `Album` model
@@ -94,16 +102,6 @@ the API.
 - [ ] Both albums and groups will have show pages that have many photos, like the photo index view
 - [ ] Can see users in a group, and make comments on the group.
 - [ ] Photos are destroyed when deleted from any location
-
-Phase 3.5: Favorites
-
-
-### Phase 4: Followers, Tags (1 days)
-
-
-- [ ] Users can follow other users, and see their profiles
-- [ ] Users can tag their own photos, and these tags will show on the photo show page.
-- [ ] A favorites page will have a photo feed with all favorited photos
 
 
 

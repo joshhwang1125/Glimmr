@@ -3,10 +3,13 @@
 
 .main-grid {
   padding-top: 100px;
+  padding-bottom: 90px;
 }
 
 .feed-grid {
   font-size: 0;
+  padding-left: 50px;
+  padding-right: 50px;
   display: -ms-flexbox;
   -ms-flex-wrap: wrap;
   -ms-flex-direction: row;
@@ -44,7 +47,7 @@
   -ms-flex: auto;
   flex: auto;
   max-width: 300px;
-  width: 200px;
+  width: 250px;
   padding: 1px;
   overflow: hidden;
   text-align: center;

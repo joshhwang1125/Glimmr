@@ -15,6 +15,12 @@ PhotoStore.find = function (id) {
   })[0];
 };
 
+PhotoStore.findUserPhotos = function (user_id) {
+  return _photos.slice().filter(function (photo) {
+    return photo.user_id === parseInt(user_id);
+  });
+};
+
 PhotoStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case PhotoConstants.ALL_PHOTOS_RECEIVED:

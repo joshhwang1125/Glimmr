@@ -42,7 +42,7 @@ var PhotoUploadForm = React.createClass({
     if (this.state.photoUrl.length > 1) {
       uploadPhotoButton = (
         <div className="upload-preview">
-          <img src={url + photoOptions + this.state.photoUrl}></img>
+          <img className="preview-img" src={url + photoOptions + this.state.photoUrl}></img>
         </div>
       )
     } else {

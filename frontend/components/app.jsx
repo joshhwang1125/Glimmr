@@ -3,6 +3,7 @@ var Feed = require('./ui/feed');
 var ApiUtil = require('../util/api_util.js');
 var NavTop = require('./ui/nav_top');
 
+
 var App = React.createClass({
   componentWillMount: function () {
     ApiUtil.fetchAllPhotos();
@@ -15,6 +16,7 @@ var App = React.createClass({
           <div className="main-grid">
             {this.props.children}
           </div>
+
       </div>
     );
   }

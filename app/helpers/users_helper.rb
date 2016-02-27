@@ -11,6 +11,7 @@
 #  summary         :text
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  cover_photo     :string
 #
 
 module UsersHelper

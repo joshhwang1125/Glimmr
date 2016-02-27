@@ -11,7 +11,6 @@ var PhotoItem = React.createClass({
   },
 
   handleClick: function() {
-    var photo = this.props.photo
     hashHistory.push("/photos/" + this.props.photo.id);
   },
 

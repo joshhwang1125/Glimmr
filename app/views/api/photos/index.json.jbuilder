@@ -11,5 +11,6 @@ json.array! @photos do |photo|
     json.email photo.user.email
     json.summary photo.user.summary
     json.profile_pic photo.user.profile_pic
+    json.cover_photo photo.user.cover_photo
   end
 end
