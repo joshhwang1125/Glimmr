@@ -11,9 +11,18 @@ var ApiUtil = {
   },
   fetchSinglePhoto: function(photoId){
     $.ajax({
-      url: "api/photos" + photoId,
+      url: "api/photos/" + photoId,
       success: function(photo){
         ApiActions.receiveAllPhotos([photo]);
+      }
+    });
+  },
+  fetchUserPhotos: function(userId){
+    $.ajax({
+      url: 'api/photos',
+      data: { currentUserId: userId },
+      success: function(photos){
+        ApiActions.receiveAllPhotos(photos);
       }
     });
   },

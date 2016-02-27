@@ -2,6 +2,9 @@ class Api::PhotosController < ApplicationController
 
   def index
     @photos = Photo.all
+    if (params[:currentUserId])
+      @photos = @photos.where(user_id: params[:currentUserId])
+    end
   end
 
   def create

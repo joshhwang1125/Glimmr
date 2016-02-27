@@ -7,4 +7,4 @@ $(".profile-navigation ul li").click(function(){
 
 });
 
-// Set to on click
+//TODO: Set to on click

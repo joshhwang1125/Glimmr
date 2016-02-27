@@ -5,7 +5,7 @@ var ApiUtil = require('../../util/api_util.js');
 var UserStore = require('../../stores/user_store');
 var PhotoItem = require('../photos/photo_item');
 
-var UserPhotos = React.createClass({
+var Favorites = React.createClass({
   getInitialState: function () {
     return { userPhotos: [], currentUser: SessionStore.user() };
   },
@@ -29,18 +29,12 @@ var UserPhotos = React.createClass({
   },
 
   render: function () {
-
     return (
-      <div className="profile-feed-grid">
-        { this.state.userPhotos.map(function (photo) {
-          return <PhotoItem key={photo.id}
-                            photo={photo}
-                            size={300}/>
-          })
-        }
+      <div className="feed-grid">
+
       </div>
     );
   }
 });
 
-module.exports = UserPhotos;
+module.exports = Favorites;

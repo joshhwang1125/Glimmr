@@ -6,6 +6,7 @@ var React = require('react'),
     PhotoItem = require('../photos/photo_item'),
     CoverPhoto = require('./cover_photo'),
     UserPhotos = require('./user_photos'),
+    Favorites = require('./favorites'),
     NavEffects = require('../../util/nav_effects.js'),
     hashHistory = require('react-router').hashHistory;
 
@@ -15,24 +16,25 @@ var ProfileShow = React.createClass({
     return {
       profileUser: {},
       currentUser: SessionStore.user(),
-      userPhotos: []
+      userPhotos: [],
+      activeTab: "photos"
       // add cover, add props to cover
     };
   },
 
   componentDidMount: function () {
     this.sessionListener = SessionStore.addListener(this._onSessionChange);
-    // this.photoListener = PhotoStore.addListener(this._onPhotosChange);
+
     this.userListener = UserStore.addListener(this._onUserChange);
 
-    ApiUtil.fetchAllPhotos();
+
     ApiUtil.fetchCurrentUser(currentUserId);
     ApiUtil.fetchUser(this.props.params.userId);
     //TODO: should this check to see if logged in?
   },
 
   componentWillUnmount: function () {
-    // this.photoListener.remove();
+
     this.sessionListener.remove();
     this.userListener.remove();
   },
@@ -46,6 +48,26 @@ var ProfileShow = React.createClass({
     this.setState({ profileUser: UserStore.user() });
     this.setState({ userPhotos: PhotoStore.findUserPhotos(this.state.profileUser.id) });
 
+  },
+  handlePhotosClick: function () {
+    this.setState({ activeTab: "photos" });
+    hashHistory.push("/users/" + this.state.profileUser.id + "/userPhotos");
+
+  },
+
+
+  handleFavoritesClick: function () {
+    this.setState({ activeTab: "favorites" });
+    hashHistory.push("/users/" + this.state.profileUser.id + "/favorites");
+  },
+  handleFollowingClick: function () {
+    this.setState({ activeTab: "friends" });
+    // hashHistory.push("/users/" + this.state.profileUser.id + "/following");
+  },
+
+  handleCreateClick: function () {
+    this.setState({ activeTab: "create" });
+    hashHistory.push("upload");
   },
 
 
@@ -62,6 +84,7 @@ var ProfileShow = React.createClass({
     };
 
     //TODO: center profile pic by adding a div around user-pic
+    //TODO: Info instead of create
 
 
     return (
@@ -78,17 +101,25 @@ var ProfileShow = React.createClass({
               Joined {createdAtDate}
             </div>
           </div>
-        <header id="profilenav">
-            <nav className='profile-navigation'>
-              <div></div>
-              <ul>
-                <li>Photos</li>
-                <li>Favorites</li>
-                <li>Friends</li>
-                <li>Create</li>
-              </ul>
-            </nav>
-        </header>
+          <header id="profilenav">
+              <nav className='profile-navigation'>
+                <ul>
+                  <li data-xcoord="0px" onClick={this.handlePhotosClick}>
+                    Photos
+                  </li>
+                  <li data-xcoord="160px" onClick={this.handleFavoritesClick}>
+                    Favorites
+                  </li>
+                  <li data-xcoord="320px" onClick={this.handleFollowingClick}>
+                    Friends
+                  </li>
+                  <li data-xcoord="480px" onClick={this.handleCreateClick}>
+                    Create
+                  </li>
+                </ul>
+              </nav>
+          </header>
+          {this.props.children}
       </div>
     );
   }

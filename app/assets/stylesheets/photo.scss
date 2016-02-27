@@ -19,6 +19,17 @@
   display: flex;
 }
 
+.profile-feed-grid {
+  font-size: 0;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: row;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  display: -webkit-box;
+  display: flex;
+}
+
 .photo-splash {
   width: 100%;
   height: 780px;
