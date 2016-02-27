@@ -2,6 +2,7 @@ var AppDispatcher = require('../dispatcher/dispatcher');
 var PhotoConstants = require('../constants/photo_constants');
 var SessionConstants = require('../constants/session_constants');
 var UserConstants = require('../constants/user_constants');
+var FavoriteConstants = require('../constants/favorite_constants');
 
 var ApiActions = {
   receiveAllPhotos: function (photos) {
@@ -22,6 +23,20 @@ var ApiActions = {
     AppDispatcher.dispatch({
       actionType: UserConstants.USER_RECEIVED,
       user: user
+    });
+  },
+
+  receiveAllFavorites: function (favorites) {
+    AppDispatcher.dispatch({
+      actionType: FavoriteConstants.All_FAVORITES_RECEIVED,
+      favorites: favorites
+    });
+  },
+
+  createFavorite: function (favorite) {
+    AppDispatcher.dispatch({
+      actionType: FavoriteConstants.NEW_FAVORITE_CREATED,
+      favorite: favorite
     });
   }
 };

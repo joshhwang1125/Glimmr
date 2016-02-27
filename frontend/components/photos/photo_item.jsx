@@ -1,6 +1,7 @@
 var React = require('react'),
     ApiUtil = require('../../util/api_util.js'),
-    hashHistory = require('react-router').hashHistory;
+    hashHistory = require('react-router').hashHistory,
+    FavoriteStore = require('../../stores/favorite_store');
 
 var PhotoItem = React.createClass({
 
@@ -12,6 +13,10 @@ var PhotoItem = React.createClass({
 
   handleClick: function() {
     hashHistory.push("/photos/" + this.props.photo.id);
+  },
+
+  handleFavoriteClick: function () {
+
   },
 
   render: function () {

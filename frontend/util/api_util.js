@@ -26,6 +26,26 @@ var ApiUtil = {
       }
     });
   },
+  fetchUserFavorites: function(userId){
+    $.ajax({
+      url: 'api/favorites',
+      data: { UserId: userId },
+      success: function(favorites){
+        ApiActions.receiveAllFavorites(favorites);
+      }
+    });
+  },
+  createFavorite: function(favoriteParams){
+    $.ajax({
+      url: 'api/favorites',
+      type: 'POST',
+      dataType: 'json',
+      data: favoriteParams,
+      success: function(favorite){
+        ApiActions.createFavorite(favorite);
+      }
+    });
+  },
   createPhoto: function (photoParams) {
     $.ajax({
       url: 'api/photos',

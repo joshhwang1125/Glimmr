@@ -8,6 +8,7 @@
 
 User.delete_all
 Photo.delete_all
+Favorite.delete_all
 
 user_bio_samples = [
   "User bio works"
@@ -50,9 +51,9 @@ photo_description_samples = [
   "So glad we got a chance to admire this sight again this year. It feels like forever, but it's totally worth the wait. Hoping to be more regular with posting. We'll see what happens!"
 ]
 
-user1 = User.create(username: "DrDemo", email: "demo@gmail.com",
+user1 = User.create(id: 1, username: "DrDemo", email: "demo@gmail.com",
   password: "demodemo", profile_pic: "1.jpg", cover_photo: "11.jpg",  summary: "I love natures and demos!")
-user2 = User.create(username: "MajorTom", email: "majortom@gmail.com" ,
+user2 = User.create(id: 2, username: "MajorTom", email: "majortom@gmail.com" ,
   password: "groundcontrol", profile_pic: "1.jpg", cover_photo: "n3_dgjs5g.jpg", summary: "I'm stepping through the door, and I'm floating in a most peculiar way, and the stars look very different today")
 
 Photo.create(id: 1, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "1.jpg")
@@ -78,3 +79,15 @@ Photo.create(id: 20, user_id: user2.id, title: photo_title_samples.sample, descr
 Photo.create(id: 21, user_id: user2.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "n6_qctkna.jpg")
 Photo.create(id: 22, user_id: user2.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "n7_ppsviy.jpg")
 Photo.create(id: 23, user_id: user2.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "n8_ovcmye.jpg")
+
+Favorite.create(user_id: 1, photo_id: 1)
+Favorite.create(user_id: 1, photo_id: 4)
+Favorite.create(user_id: 1, photo_id: 6)
+Favorite.create(user_id: 1, photo_id: 8)
+Favorite.create(user_id: 1, photo_id: 11)
+Favorite.create(user_id: 1, photo_id: 13)
+Favorite.create(user_id: 1, photo_id: 15)
+Favorite.create(user_id: 1, photo_id: 19)
+Favorite.create(user_id: 1, photo_id: 20)
+Favorite.create(user_id: 1, photo_id: 21)
+Favorite.create(user_id: 1, photo_id: 23)

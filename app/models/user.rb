@@ -31,9 +31,8 @@
 
 class User < ActiveRecord::Base
 
-  has_many(
-    :photos
-  )
+  has_many :photos
+  has_many :favorites
 
 
   attr_reader :password

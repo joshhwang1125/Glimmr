@@ -25,7 +25,6 @@ PhotoStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case PhotoConstants.ALL_PHOTOS_RECEIVED:
       resetPhotos(payload.photos);
-      console.log(payload.photos);
       PhotoStore.__emitChange();
       break;
   }
