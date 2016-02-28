@@ -7,6 +7,7 @@ var React = require('react'),
     CoverPhoto = require('./cover_photo'),
     UserPhotos = require('./user_photos'),
     Favorites = require('./favorites'),
+    Info = require('./info'),
     NavEffects = require('../../util/nav_effects.js'),
     hashHistory = require('react-router').hashHistory;
 
@@ -18,7 +19,7 @@ var ProfileShow = React.createClass({
       currentUser: SessionStore.user(),
       userPhotos: [],
       activeTab: "photos"
-      // add cover, add props to cover
+
     };
   },
 
@@ -65,10 +66,12 @@ var ProfileShow = React.createClass({
     // hashHistory.push("/users/" + this.state.profileUser.id + "/following");
   },
 
-  handleCreateClick: function () {
-    this.setState({ activeTab: "create" });
-    hashHistory.push("upload");
+  handleInfoClick: function () {
+    this.setState({ activeTab: "info" });
+    hashHistory.push("/users/" + this.state.profileUser.id + "/info");
   },
+
+  //TODO: FIX USER INFO!!
 
 
 
@@ -113,8 +116,8 @@ var ProfileShow = React.createClass({
                   <li data-xcoord="320px" onClick={this.handleFollowingClick}>
                     Friends
                   </li>
-                  <li data-xcoord="480px" onClick={this.handleCreateClick}>
-                    Create
+                  <li data-xcoord="480px" onClick={this.handleInfoClick}>
+                    Info
                   </li>
                 </ul>
               </nav>

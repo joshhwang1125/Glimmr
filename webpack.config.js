@@ -9,7 +9,7 @@ module.exports = {
     devtoolModuleFilenameTemplate: '[resourcePath]',
     devtoolFallbackModuleFilenameTemplate: '[resourcePath]?[hash]'
   },
-  devtool: 'source-map',
+  devtool: 'source-maps',
   resolve: {
     extensions: ["", ".js", ".jsx"]
   },

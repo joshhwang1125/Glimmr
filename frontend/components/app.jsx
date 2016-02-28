@@ -5,13 +5,11 @@ var NavTop = require('./ui/nav_top');
 
 
 var App = React.createClass({
-  componentWillMount: function () {
-    ApiUtil.fetchAllPhotos();
-  },
+
 
   render: function () {
     return (
-      <div>
+      <div className="app-container">
         <NavTop/>
           <div className="main-grid">
             {this.props.children}

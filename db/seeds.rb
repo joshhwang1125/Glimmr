@@ -52,7 +52,7 @@ photo_description_samples = [
 ]
 
 user1 = User.create(id: 1, username: "DrDemo", email: "demo@gmail.com",
-  password: "demodemo", profile_pic: "1.jpg", cover_photo: "11.jpg",  summary: "I love natures and demos!")
+  password: "demodemo", profile_pic: "1.jpg", cover_photo: "11.jpg",  summary: "I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! ")
 user2 = User.create(id: 2, username: "MajorTom", email: "majortom@gmail.com" ,
   password: "groundcontrol", profile_pic: "1.jpg", cover_photo: "n3_dgjs5g.jpg", summary: "I'm stepping through the door, and I'm floating in a most peculiar way, and the stars look very different today")
 

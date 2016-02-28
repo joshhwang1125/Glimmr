@@ -1,3 +1,4 @@
+
 $lightblue: #008AAD;
 
 *, *:before, *:after {
@@ -20,10 +21,10 @@ ul, li, h1, h2, h3, h4, h5, h6, p, a, .logo {
 
 
 
-
 #splashnav {
   position: fixed;
   width: 100%;
+  min-width: 940px;
   padding-top: 10px;
   top: 0;
   background: #000;
@@ -56,6 +57,10 @@ nav {
   text-decoration: none;
   padding: 25px;
   transition: 0.3s all;
+  &:focus, &:visited {
+    color: #fff;
+    text-decoration: none;
+  };
 }
 
 .navigation a:hover {
@@ -63,6 +68,8 @@ nav {
   text-decoration: none;
   color: #fff;
 }
+
+
 
 #start:hover {
   background: green;
@@ -92,6 +99,4 @@ body.header-fixed .logo {
   color: #fff;
 }
 
-section .inner {
-  padding-top: 200px;
-}
+

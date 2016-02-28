@@ -38,7 +38,7 @@ var PhotoShow = React.createClass({
 
 
   render: function () {
-
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     var url = "http://res.cloudinary.com/dcqvnxgiy/image/upload/w_700,h_700,c_fill/";
 
     return (

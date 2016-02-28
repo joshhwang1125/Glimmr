@@ -52,6 +52,7 @@ var PhotoUploadForm = React.createClass({
     };
 
     return (
+      <div className="form-container">
       <div id="form-main">
         <div id="form-div">
         <form onSubmit={this.handleSubmit} id="photo-upload-form">
@@ -83,6 +84,7 @@ var PhotoUploadForm = React.createClass({
 
         </form>
         </div>
+      </div>
       </div>
     );
   }

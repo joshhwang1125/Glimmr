@@ -1,15 +1,10 @@
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-.main-grid {
-  padding-top: 100px;
-  padding-bottom: 90px;
-}
 
 .feed-grid {
   font-size: 0;
-  padding-left: 50px;
-  padding-right: 50px;
+
   display: -ms-flexbox;
   -ms-flex-wrap: wrap;
   -ms-flex-direction: row;
@@ -17,6 +12,8 @@
   flex-flow: row wrap;
   display: -webkit-box;
   display: flex;
+  justify-content: center;
+  align-content: flex-start;
 }
 
 .profile-feed-grid {
@@ -28,6 +25,8 @@
   flex-flow: row wrap;
   display: -webkit-box;
   display: flex;
+  justify-content: center;
+  align-content: flex-start;
 }
 
 .photo-splash {
@@ -57,8 +56,8 @@
   -webkit-box-flex: auto;
   -ms-flex: auto;
   flex: auto;
-  max-width: 300px;
   width: 250px;
+  max-width: 300px;
   padding: 1px;
   overflow: hidden;
   text-align: center;
