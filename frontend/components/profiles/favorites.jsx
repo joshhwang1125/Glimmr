@@ -1,6 +1,7 @@
 var React = require('react');
 var ApiUtil = require('../../util/api_util.js');
 var UserStore = require('../../stores/user_store');
+var FavoriteStore = require('../../stores/favorite_store');
 var PhotoItem = require('../photos/photo_item');
 
 var Favorites = React.createClass({
@@ -10,17 +11,23 @@ var Favorites = React.createClass({
 
   componentDidMount: function () {
     this.userListener = UserStore.addListener(this._onUserChange);
+    this.favoriteListener = FavoriteStore.addListener(this._onFavoritesChange);
     ApiUtil.fetchUser(this.props.params.userId);
   },
 
   componentWillUnmount: function () {
     this.userListener.remove();
+    this.favoriteListener.remove();
   },
 
   _onUserChange: function () {
-
     this.setState({ profileUser: UserStore.user() });
   },
+
+  _onFavoritesChange: function () {
+    ApiUtil.fetchUser(this.props.params.userId);
+  },
+
 
   render: function () {
     var profileUserFavorites;

@@ -45,6 +45,11 @@ PhotoStore.__onDispatch = function (payload) {
       resetPhotos(payload.photos);
       PhotoStore.__emitChange();
       break;
+    case PhotoConstants.PHOTO_DELETED:
+      console.log(payload.photo);
+      deletePhoto(payload.photo);
+      PhotoStore.__emitChange();
+      break;
   }
 };
 

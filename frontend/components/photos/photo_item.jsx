@@ -9,9 +9,9 @@ var PhotoItem = React.createClass({
   getInitialState: function () {
     return {
       currentUser: SessionStore.user(),
-      favoriteId: FavoriteStore.currentUserFavorite(this.props.photo.id)
+      favoriteId: FavoriteStore.currentUserFavorite(parseInt(this.props.photo.id))
 
-      // FavoriteStore.currentUserFavorite(this.props.photo.id)
+      // FavoriteStore.currentUserFavorite(parseInt(this.props.photo.id))
     };
   },
   componentDidMount: function () {
@@ -27,7 +27,7 @@ var PhotoItem = React.createClass({
   },
 
   _onFavoritesChange: function () {
-    this.setState({ favoriteId: FavoriteStore.currentUserFavorite(this.props.photo.id) });
+    this.setState({ favoriteId: FavoriteStore.currentUserFavorite(parseInt(this.props.photo.id)) });
   },
 
   handleClick: function() {
@@ -62,7 +62,7 @@ var PhotoItem = React.createClass({
     var favoriteButton = "";
 
     if (this.state.favoriteId === undefined) {
-      favoriteButton = (<span className="fa fa-heart-o fa-fw heart-blank" onClick={this.handleLike}></span>)
+      favoriteButton = (<span className="fa fa-heart fa-fw heart-blank" onClick={this.handleLike}></span>)
     } else {
       favoriteButton = (<span className="fa fa-heart fa-fw heart-red" onClick={this.handleUnlike}></span>)
     };
@@ -75,9 +75,6 @@ var PhotoItem = React.createClass({
           <div className="nd-content_inner">
             <div className="nd-content_inner1">
               <h3 className="nd-title"><span>{this.props.photo.title}</span></h3>
-              <span className="nd-icon">
-                <span className="fa fa-comment-o fa-fw comment-red"></span>
-              </span>
               <span className="nd-icon">
                 {favoriteButton}
               </span>

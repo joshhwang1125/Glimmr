@@ -81,6 +81,7 @@ var ApiUtil = {
     })
   },
   deletePhoto: function(photoId){
+
     $.ajax({
       url: 'api/photos/' + photoId,
       type: 'DELETE',

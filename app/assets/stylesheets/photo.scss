@@ -67,6 +67,9 @@
   font-weight: 300;
   -webkit-transition: all 1s ease 0.01s;
   transition: all 1s ease 0.01s;
+  text-shadow:
+    2px 1px 1px #2c2c2c,
+    3px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .nd-title span {
@@ -82,19 +85,20 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 30px;
   margin: 25px;
   opacity: 0;
   position: relative;
   cursor: pointer;
   -webkit-transition-duration: 0.6s;
   transition-duration: 0.6s;
+  background-color: rgba(255, 255, 255, 0);
   -webkit-transition-timing-function: cubic-bezier(1.000, -0.530, 0.405, 1.425);
   transition-timing-function: cubic-bezier(1.000, -0.530, 0.405, 1.425);
 }
 
 .nd-icon span {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0);
   border-radius: 6px;
 
 
@@ -104,9 +108,9 @@
 
 }
 .nd-icon:hover span {
-  background: #fff;
-  -webkit-transform: scale(1.1,1.1);
-      transform: scale(1.1,1.1);
+
+  -webkit-transform: scale(1.4,1.4);
+      transform: scale(1.4,1.4);
 }
 
 .nd-content {
@@ -142,7 +146,7 @@
       transition: all 0.5s cubic-bezier(1.000, -0.530, 0.405, 1.425) 0.01s;
 }
 .nd-wrap:hover .nd-content {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0);
 }
 .nd-content .nd-icon:nth-of-type(1) {
   -webkit-transition-delay: 0.1s;
@@ -161,14 +165,16 @@
       transition-delay: 0.25s;
 }
 
-.heart-red {
+.heart-red{
   color: red;
+    text-shadow:
+    2px 1px 1px #2c2c2c,
+    3px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
-.comment-red {
-
+.heart-blank{
+  color: white;
+    text-shadow:
+    2px 1px 1px #2c2c2c,
+    3px 2px 2px rgba(0, 0, 0, 0.4);
 }
-
-
-
-
