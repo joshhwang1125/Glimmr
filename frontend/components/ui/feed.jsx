@@ -7,21 +7,26 @@ var NavTop = require('./nav_top');
 
 var Feed = React.createClass({
   getInitialState: function () {
-    return { photos: [], currentUser: SessionStore.user() };
+    return { photos: [], favorites: [], currentUser: SessionStore.user() };
   },
 
   componentDidMount: function () {
     this.photoListener = PhotoStore.addListener(this._onPhotosChange);
+    this.favoriteListener = FavoriteStore.addListener(this._onFavoritesChange);
     ApiUtil.fetchAllPhotos();
-    ApiUtil.fetchCurrentUser(currentUserId); //TODO: remove?
   },
 
   componentWillUnmount: function () {
     this.photoListener.remove();
+    this.favoriteListener.remove();
   },
 
   _onPhotosChange: function () {
     this.setState({ photos: PhotoStore.all() });
+  },
+
+  _onFavoritesChange: function () {
+    this.setState({ favorites: FavoriteStore.all() });
   },
 
   render: function () {

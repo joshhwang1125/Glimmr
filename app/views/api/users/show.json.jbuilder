@@ -13,3 +13,16 @@ json.photos @user.photos do |photo|
   json.description photo.description
   json.photo_url photo.photo_url
 end
+
+json.favorited_photos @user.favorited_photos do |favorited_photo|
+  json.id favorited_photo.id
+  json.user_id favorited_photo.user_id
+  json.title favorited_photo.title
+  json.description favorited_photo.description
+  json.photo_url favorited_photo.photo_url
+  json.total_favorites favorited_photo.favorites.length
+
+  json.user do
+    json.username favorited_photo.user.username
+  end
+end

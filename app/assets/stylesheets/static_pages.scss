@@ -44,7 +44,12 @@ html,body {
   padding-bottom: 90px;
   height: 100%;
   width: 100%;
-
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 section .inner {
@@ -60,6 +65,9 @@ section .inner {
   box-sizing: border-box;
   vertical-align: top;
   clear:none;
+  -webkit-transition: background-image 0.5s ease-in-out;
+  transition: background-image 0.5s ease-in-out;
+
 }
 
 .splash-bucket h1 {

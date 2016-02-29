@@ -9,6 +9,14 @@ FavoriteStore.all = function () {
   return _favorites.slice();
 };
 
+FavoriteStore.currentUserFavorite = function (photoId) {
+  for (var i = 0; i < _favorites.length; i++) {
+    if (_favorites[i].photo_id === photoId && _favorites[i].user_id === currentUserId){
+      return _favorites[i].id;
+    }
+  }
+};
+
 FavoriteStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case FavoriteConstants.All_FAVORITES_RECEIVED:
@@ -16,8 +24,14 @@ FavoriteStore.__onDispatch = function (payload) {
       console.log(payload.favorites);
       FavoriteStore.__emitChange();
       break;
-    case FavoriteConstants.NEW_FAVORITE_CREATED:
+    case FavoriteConstants.NEW_FAVORITE_RECEIVED:
+      console.log(payload.favorite);
       addFavorite(payload.favorite);
+      FavoriteStore.__emitChange();
+      break;
+    case FavoriteConstants.FAVORITE_DELETED:
+      console.log(payload.favorite);
+      deleteFavorite(payload.favorite);
       FavoriteStore.__emitChange();
       break;
   }
@@ -29,7 +43,15 @@ var resetFavorites = function (favorites) {
 
 var addFavorite = function (favorite) {
   _favorites.push(favorite);
-}
+};
+
+var deleteFavorite = function (favorite) {
+  for (var i = 0; i < _favorites.length; i++) {
+    if (_favorites[i].id === favorite.id){
+      _favorites.splice(i, 1);
+    }
+  }
+};
 
 
 

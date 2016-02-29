@@ -1,9 +1,9 @@
 class Api::FavoritesController < ApplicationController
 
   def index
-    @favorites = Favorite.all
+    @favorites = Favorite.all.includes(:user, :photo)
     if (params[:userId])
-      @favorites = @favorites.where(user_id: params[:userId])
+      @favorites = @favorites.where(user_id: params[:userId]).includes(:user, :photo)
     end
   end
 
@@ -20,13 +20,13 @@ class Api::FavoritesController < ApplicationController
   def destroy
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
-    render json: {}
+    render 'create'
   end
 
 
   private
 
-  def favorites_params
+  def favorite_params
     params.require(:favorite).permit(:user_id, :photo_id)
   end
 

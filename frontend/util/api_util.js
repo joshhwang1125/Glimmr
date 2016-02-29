@@ -36,13 +36,25 @@ var ApiUtil = {
     });
   },
   createFavorite: function(favoriteParams){
+
     $.ajax({
       url: 'api/favorites',
       type: 'POST',
       dataType: 'json',
       data: favoriteParams,
       success: function(favorite){
-        ApiActions.createFavorite(favorite);
+        ApiActions.receiveNewFavorite(favorite);
+      }
+    });
+  },
+  deleteFavorite: function(favoriteId){
+    $.ajax({
+      url: 'api/favorites/' + favoriteId,
+      type: 'DELETE',
+      dataType: 'json',
+      success: function(favorite){
+
+        ApiActions.removeFavorite(favorite);
       }
     });
   },
@@ -67,6 +79,16 @@ var ApiUtil = {
         ApiActions.receiveAllPhotos([photo]);
       }
     })
+  },
+  deletePhoto: function(photoId){
+    $.ajax({
+      url: 'api/photos/' + photoId,
+      type: 'DELETE',
+      dataType: 'json',
+      success: function(photo){
+        ApiActions.removePhoto(photo);
+      }
+    });
   },
   fetchCurrentUser: function (currentUserId) {
     $.ajax({

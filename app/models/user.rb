@@ -32,7 +32,8 @@
 class User < ActiveRecord::Base
 
   has_many :photos
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_photos, through: :favorites, source: :photo
 
 
   attr_reader :password

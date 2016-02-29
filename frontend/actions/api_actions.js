@@ -12,6 +12,13 @@ var ApiActions = {
     });
   },
 
+  removePhoto: function (photo) {
+    AppDispatcher.dispatch({
+      actionType: PhotoConstants.PHOTO_DELETED,
+      photo: photo
+    });
+  },
+
   receiveCurrentUser: function (user) {
     AppDispatcher.dispatch({
       actionType: SessionConstants.CURRENT_USER_RECEIVED,
@@ -33,9 +40,16 @@ var ApiActions = {
     });
   },
 
-  createFavorite: function (favorite) {
+  receiveNewFavorite: function (favorite) {
     AppDispatcher.dispatch({
-      actionType: FavoriteConstants.NEW_FAVORITE_CREATED,
+      actionType: FavoriteConstants.NEW_FAVORITE_RECEIVED,
+      favorite: favorite
+    });
+  },
+
+  removeFavorite: function (favorite) {
+    AppDispatcher.dispatch({
+      actionType: FavoriteConstants.FAVORITE_DELETED,
       favorite: favorite
     });
   }

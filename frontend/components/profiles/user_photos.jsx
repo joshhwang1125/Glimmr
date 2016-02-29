@@ -7,25 +7,39 @@ var PhotoItem = require('../photos/photo_item');
 
 var UserPhotos = React.createClass({
   getInitialState: function () {
-    return { userPhotos: [], currentUser: SessionStore.user() };
+    return { profileUser: {}, userPhotos: [], currentUser: SessionStore.user() };
   },
 
   componentDidMount: function () {
+    this.userListener = UserStore.addListener(this._onUserChange);
     this.photoListener = PhotoStore.addListener(this._onPhotosChange);
-    ApiUtil.fetchUserPhotos(UserStore.user().id);
+    this.sessionListener = SessionStore.addListener(this._onSessionChange);
+    ApiUtil.fetchUser(this.props.params.userId);
+    ApiUtil.fetchUserPhotos(this.props.params.userId);
 
   },
 
   componentWillUnmount: function () {
+    this.userListener.remove();
     this.photoListener.remove();
+    this.sessionListener.remove();
   },
 
-  componentWillReceiveProps: function () {
-    ApiUtil.fetchUserPhotos(UserStore.user().id);
+  componentWillReceiveProps: function (newProps) {
+    ApiUtil.fetchUser(newProps.params.userId);
+    ApiUtil.fetchUserPhotos(newProps.params.userId);
   },
 
   _onPhotosChange: function () {
     this.setState({ userPhotos: PhotoStore.all() });
+  },
+
+  _onUserChange: function () {
+    this.setState({ profileUser: UserStore.user() });
+  },
+
+  _onSessionChange: function () {
+    this.setState({ currentUser: SessionStore.user() });
   },
 
   render: function () {

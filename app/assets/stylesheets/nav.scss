@@ -30,6 +30,12 @@ ul, li, h1, h2, h3, h4, h5, h6, p, a, .logo {
   background: #000;
   transition: 0.7s all;
   z-index: 100;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 li {
@@ -41,9 +47,10 @@ nav {
 }
 
 .navigation ul {
-  float: left;
+  float: right;
   margin-top: 10px;
   margin-left: 350px;
+  margin-right: 50px;
 }
 
 .navigation li {

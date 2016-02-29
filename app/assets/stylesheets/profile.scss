@@ -42,7 +42,7 @@
   height: 100%;
   min-height: 500px;
   width: 100%;
-  background: gray;
+  background: #B5B5B5;
   display:flex;
   justify-content: flex;
   padding-top: 15px;
@@ -56,12 +56,18 @@
   min-width: 1000px;
   box-sizing: border-box;
   vertical-align: top;
-  border-radius: 5px;
+  border-radius: 15px;
   background: white;
   padding-top:50px;
   padding-bottom:50px;
   padding-left:70px;
   padding-right:70px;
+}
+
+.profile-info {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Verdana, sans-serif;
 }
 
 .you-text {

@@ -26,9 +26,9 @@ var Info = React.createClass({
     return (
       <div className="profile-summary-container">
         <div className="profile-summary">
-          <div class="centered">
+          <div>
             <h1>Story</h1>
-            <div>{this.state.profileUser.summary}</div>
+            <div className="profile-info">{this.state.profileUser.summary}</div>
           </div>
         </div>
       </div>

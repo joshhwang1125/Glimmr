@@ -12,8 +12,9 @@
   flex-flow: row wrap;
   display: -webkit-box;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-content: flex-start;
+
 }
 
 .profile-feed-grid {
@@ -25,43 +26,22 @@
   flex-flow: row wrap;
   display: -webkit-box;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-content: flex-start;
-}
-
-.photo-splash {
-  width: 100%;
-  height: 780px;
-  background: #212124;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-
-
-
-.photo-info {
-  width: 100%;
-  height: 780px;
-  background: white;
-
 }
 
 
 
 .photo-thumb {
-  -webkit-box-flex: auto;
-  -ms-flex: auto;
+  /*-webkit-box-flex: auto;*/
+  /*-ms-flex: auto;*/
   flex: auto;
   width: 250px;
-  max-width: 300px;
+  max-width: 325px;
   padding: 1px;
   overflow: hidden;
   text-align: center;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   position: relative;
   display: inline-block;
 }
@@ -98,9 +78,12 @@
 
 .nd-icon {
   color: #000;
-  display: inline-block;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   font-size: 25px;
-  margin: 15px;
+  margin: 25px;
   opacity: 0;
   position: relative;
   cursor: pointer;
@@ -112,7 +95,9 @@
 
 .nd-icon span {
   background: rgba(255, 255, 255, 0.7);
-  border-radius: 3px;
+  border-radius: 6px;
+
+
 
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
@@ -176,19 +161,14 @@
       transition-delay: 0.25s;
 }
 
-.photo-splash {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: flex;
-    position: relative;
-    background: #212124;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+.heart-red {
+  color: red;
 }
+
+.comment-red {
+
+}
+
+
+
+

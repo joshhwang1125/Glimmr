@@ -15,6 +15,24 @@ PhotoStore.find = function (id) {
   })[0];
 };
 
+PhotoStore.next = function (photo) {
+  var photoPosition = _photos.indexOf(photo);
+
+  if (photoPosition === (_photos.length - 1)){
+    return photo; } else {
+      return _photos[photoPosition + 1];
+    }
+};
+
+PhotoStore.prev = function (photo) {
+  var photoPosition = _photos.indexOf(photo);
+
+  if (photoPosition === 0){
+    return photo; } else {
+      return _photos[photoPosition - 1];
+    }
+};
+
 PhotoStore.findUserPhotos = function (user_id) {
   return _photos.slice().filter(function (photo) {
     return photo.user_id === parseInt(user_id);
@@ -27,6 +45,14 @@ PhotoStore.__onDispatch = function (payload) {
       resetPhotos(payload.photos);
       PhotoStore.__emitChange();
       break;
+  }
+};
+
+var deletePhoto = function (photo) {
+  for (var i = 0; i < _photos.length; i++) {
+    if (_photos[i].id === photo.id){
+      _photos.splice(i, 1);
+    }
   }
 };
 

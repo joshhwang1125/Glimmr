@@ -1,36 +1,42 @@
 var React = require('react');
-var PhotoStore = require('../../stores/photo_store');
-var SessionStore = require('../../stores/session_store');
 var ApiUtil = require('../../util/api_util.js');
 var UserStore = require('../../stores/user_store');
 var PhotoItem = require('../photos/photo_item');
 
 var Favorites = React.createClass({
   getInitialState: function () {
-    return { userPhotos: [], currentUser: SessionStore.user() };
+    return { profileUser: UserStore.user() };
   },
 
   componentDidMount: function () {
-    this.photoListener = PhotoStore.addListener(this._onPhotosChange);
-    ApiUtil.fetchUserPhotos(UserStore.user().id);
-
+    this.userListener = UserStore.addListener(this._onUserChange);
+    ApiUtil.fetchUser(this.props.params.userId);
   },
 
   componentWillUnmount: function () {
-    this.photoListener.remove();
+    this.userListener.remove();
   },
 
-  componentWillReceiveProps: function () {
-    ApiUtil.fetchUserPhotos(UserStore.user().id);
-  },
+  _onUserChange: function () {
 
-  _onPhotosChange: function () {
-    this.setState({ userPhotos: PhotoStore.all() });
+    this.setState({ profileUser: UserStore.user() });
   },
 
   render: function () {
+    var profileUserFavorites;
+
+    if (this.state.profileUser.id === undefined) {
+      profileUserFavorites = "loading";
+    } else {
+      profileUserFavorites = (this.state.profileUser.favorited_photos.map(function(photo){
+          return <PhotoItem key={photo.id}
+                            photo={photo}
+                            size={300}/>}))
+    };
+
     return (
-      <div className="feed-grid">
+      <div className="profile-feed-grid">
+        { profileUserFavorites }
 
       </div>
     );

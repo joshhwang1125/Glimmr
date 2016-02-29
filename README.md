@@ -90,7 +90,7 @@ the API.
 - [ ] A favorites page will have a photo feed with all favorited photos
 
 
-### Phase 4: Albums and Group tags location (1.5 days)
+### Phase 4: tags and Search (1.5 days)
 
 
 - [ ] create `Album` model

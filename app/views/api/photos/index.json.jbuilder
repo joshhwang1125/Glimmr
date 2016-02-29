@@ -4,6 +4,7 @@ json.array! @photos do |photo|
   json.title photo.title
   json.description photo.description
   json.photo_url photo.photo_url
+  json.total_favorites photo.favorites.length
 
   json.user do
     json.id photo.user.id

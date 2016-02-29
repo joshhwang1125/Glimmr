@@ -8,7 +8,6 @@ var React = require('react'),
     UserPhotos = require('./user_photos'),
     Favorites = require('./favorites'),
     Info = require('./info'),
-    NavEffects = require('../../util/nav_effects.js'),
     hashHistory = require('react-router').hashHistory;
 
 var ProfileShow = React.createClass({
@@ -50,23 +49,27 @@ var ProfileShow = React.createClass({
     this.setState({ userPhotos: PhotoStore.findUserPhotos(this.state.profileUser.id) });
 
   },
-  handlePhotosClick: function () {
+  handlePhotosClick: function (e) {
+    e.preventDefault();
     this.setState({ activeTab: "photos" });
     hashHistory.push("/users/" + this.state.profileUser.id + "/userPhotos");
-
+    //TODO why is it scrolling back up?
   },
 
 
-  handleFavoritesClick: function () {
+  handleFavoritesClick: function (e) {
+    e.preventDefault();
     this.setState({ activeTab: "favorites" });
     hashHistory.push("/users/" + this.state.profileUser.id + "/favorites");
   },
-  handleFollowingClick: function () {
+  handleFollowingClick: function (e) {
+    e.preventDefault();
     this.setState({ activeTab: "friends" });
     // hashHistory.push("/users/" + this.state.profileUser.id + "/following");
   },
 
-  handleInfoClick: function () {
+  handleInfoClick: function (e) {
+    e.preventDefault();
     this.setState({ activeTab: "info" });
     hashHistory.push("/users/" + this.state.profileUser.id + "/info");
   },
