@@ -14,7 +14,7 @@ var FolloweeItem = React.createClass({
       <div className="followee-container">
         <h1>
           <div className="followee-pic" style={followeePic} onClick={this.handleClick}></div>
-          <span className="followee-username">{this.props.followee.username}</span>
+
         </h1>
       </div>
     );

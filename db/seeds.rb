@@ -55,6 +55,19 @@ user1 = User.create(id: 1, username: "Demo Dog", email: "demo@gmail.com",
   password: "demodemo", profile_pic: "1.jpg", cover_photo: "11.jpg",  summary: "Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark DEMOS Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark ")
 user2 = User.create(id: 2, username: "MajorTom", email: "majortom@gmail.com" ,
   password: "groundcontrol", profile_pic: "0.jpg", cover_photo: "n3_dgjs5g.jpg", summary: "I'm stepping through the door, and I'm floating in a most peculiar way, and the stars look very different today")
+user3 = User.create(id: 3, username: "Stewart Butterfield", email: "butterfield@gmail.com" ,
+  password: "demodemo", profile_pic: "stewart_oz3fm0.jpg", cover_photo: "11.jpg", summary: "I'm stepping through the door, and I'm floating in a most peculiar way, and the stars look very different today")
+user4 = User.create(id: 4, username: "Professor Meowington", email: "meowington@gmail.com" ,
+  password: "demodemo", profile_pic: "meowington_mrkodh.jpg", cover_photo: "11.jpg", summary: "I'm stepping through the door, and I'm floating in a most peculiar way, and the stars look very different today")
+user5 = User.create(id: 5, username: "JLaw", email: "jlaw@gmail.com" ,
+  password: "demodemo", profile_pic: "jlaw_c5kufy.jpg", cover_photo: "11.jpg", summary: "I'm stepping through the door, and I'm floating in a most peculiar way, and the stars look very different today")
+user6 = User.create(id: 6, username: "TheBeard", email: "thebeard@gmail.com" ,
+  password: "demodemo", profile_pic: "James-Harden1_cazean.jpg", cover_photo: "11.jpg", summary: "I'm stepping through the door, and I'm floating in a most peculiar way, and the stars look very different today")
+user7 = User.create(id: 7, username: "Yeezy", email: "yeezy@gmail.com" ,
+  password: "demodemo", profile_pic: "yeezy_mbw3x3.jpg", cover_photo: "11.jpg", summary: "I'm stepping through the door, and I'm floating in a most peculiar way, and the stars look very different today")
+user8 = User.create(id: 8, username: "FeelTheBern", email: "feelthebern@gmail.com" ,
+  password: "demodemo", profile_pic: "bernie_c6ix1l.jpg", cover_photo: "11.jpg", summary: "I'm stepping through the door, and I'm floating in a most peculiar way, and the stars look very different today")
+
 
 Photo.create(id: 1, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "s4.jpg")
 Photo.create(id: 2, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "2.jpg")
@@ -94,13 +107,13 @@ Favorite.create(user_id: 1, photo_id: 23)
 
 Follow.create(id: 1, followee_id: 2, follower_id: 1)
 Follow.create(id: 2, followee_id: 1, follower_id: 2)
-Follow.create(id: 3, followee_id: 2, follower_id: 1)
-Follow.create(id: 4, followee_id: 2, follower_id: 1)
-Follow.create(id: 5, followee_id: 2, follower_id: 1)
-Follow.create(id: 6, followee_id: 2, follower_id: 1)
-Follow.create(id: 7, followee_id: 2, follower_id: 1)
-Follow.create(id: 8, followee_id: 2, follower_id: 1)
-Follow.create(id: 9, followee_id: 2, follower_id: 1)
-Follow.create(id: 10, followee_id: 2, follower_id: 1)
-Follow.create(id: 11, followee_id: 2, follower_id: 1)
-Follow.create(id: 12, followee_id: 2, follower_id: 1)
+Follow.create(id: 3, followee_id: 3, follower_id: 1)
+Follow.create(id: 4, followee_id: 4, follower_id: 1)
+Follow.create(id: 5, followee_id: 5, follower_id: 1)
+Follow.create(id: 6, followee_id: 6, follower_id: 1)
+Follow.create(id: 7, followee_id: 7, follower_id: 1)
+Follow.create(id: 8, followee_id: 8, follower_id: 1)
+Follow.create(id: 9, followee_id: 3, follower_id: 2)
+Follow.create(id: 10, followee_id: 4, follower_id: 2)
+Follow.create(id: 11, followee_id: 5, follower_id: 2)
+Follow.create(id: 12, followee_id: 6, follower_id: 2)
