@@ -1,9 +1,9 @@
 class Api::FavoritesController < ApplicationController
 
   def index
-    @favorites = Favorite.all.includes(:user, :photo)
+    @favorites = Favorite.includes(:user, :photo)
     if (params[:userId])
-      @favorites = @favorites.where(user_id: params[:userId]).includes(:user, :photo)
+      @favorites = @favorites.where(user_id: params[:userId])
     end
   end
 

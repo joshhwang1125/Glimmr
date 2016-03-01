@@ -17,7 +17,7 @@ UserStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case UserConstants.USER_RECEIVED:
       resetUser(payload.user);
-      console.log(payload.user);
+      // console.log(payload.user);
       UserStore.__emitChange();
       break;
   }

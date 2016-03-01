@@ -26,3 +26,12 @@ json.favorited_photos @user.favorited_photos do |favorited_photo|
     json.username favorited_photo.user.username
   end
 end
+
+json.followees @user.followees do |followee|
+  json.id followee.id
+  json.username followee.username
+  json.profile_pic followee.profile_pic
+  json.cover_photo followee.cover_photo
+end
+
+# TODO: FINISH followee

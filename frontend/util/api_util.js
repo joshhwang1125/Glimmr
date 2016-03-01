@@ -58,6 +58,38 @@ var ApiUtil = {
       }
     });
   },
+  fetchFollows: function(followerId){
+    $.ajax({
+      url: 'api/follows',
+      data: { followerId: followerId },
+      success: function(follows){
+        ApiActions.receiveAllFollows(follows);
+      }
+    });
+  },
+  createFollow: function(followParams){
+
+    $.ajax({
+      url: 'api/follows',
+      type: 'POST',
+      dataType: 'json',
+      data: followParams,
+      success: function(follow){
+        ApiActions.receiveNewFollow(follow);
+      }
+    });
+  },
+  deleteFollow: function(followId){
+    $.ajax({
+      url: 'api/follows/' + followId,
+      type: 'DELETE',
+      dataType: 'json',
+      success: function(follow){
+
+        ApiActions.removeFollow(follow);
+      }
+    });
+  },
   createPhoto: function (photoParams) {
     $.ajax({
       url: 'api/photos',
@@ -67,7 +99,7 @@ var ApiUtil = {
       success: function (photo) {
         ApiActions.receiveAllPhotos([photo]);
       }
-    })
+    });
   },
   editPhoto: function (photoParams) {
     $.ajax({
@@ -78,7 +110,7 @@ var ApiUtil = {
       success: function (photo) {
         ApiActions.receiveAllPhotos([photo]);
       }
-    })
+    });
   },
   deletePhoto: function(photoId){
 
@@ -98,7 +130,7 @@ var ApiUtil = {
       success: function (user) {
         ApiActions.receiveCurrentUser(user);
       }
-    })
+    });
   },
   fetchUser: function (UserId) {
     $.ajax({
@@ -107,7 +139,7 @@ var ApiUtil = {
       success: function (user) {
         ApiActions.receiveUser(user);
       }
-    })
+    });
   },
 };
 

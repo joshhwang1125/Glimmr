@@ -42,7 +42,7 @@
   height: 100%;
   min-height: 500px;
   width: 100%;
-  background: #B5B5B5;
+  background: rgb(232, 232, 232);
   display:flex;
   justify-content: flex;
   padding-top: 15px;
@@ -57,7 +57,7 @@
   box-sizing: border-box;
   vertical-align: top;
   border-radius: 15px;
-  background: white;
+  background: #F5F5F5;
   padding-top:50px;
   padding-bottom:50px;
   padding-left:70px;
@@ -70,22 +70,17 @@
   font-family: Verdana, sans-serif;
 }
 
-.you-text {
-  margin-left: 10px;
-  font-size: 28px;
-  font-weight: 400;
+.follow-grid {
+  height: 100%;
+  min-height: 500px;
+  width: 100%;
+  background: rgb(232, 232, 232);
+  display:flex;
+  justify-content: flex;
+  padding-top: 15px;
+  padding-bottom: 30px;
 }
 
-#selected-profile-tab {
-  height: 50px;
-  border-bottom: 5px solid #006dac;
-
-  -webkit-transition: all 0s ease;
-     -moz-transition: all 0s ease;
-       -o-transition: all 0s ease;
-      -ms-transition: all 0s ease;
-          transition: all 0s ease;
-}
 
 #user-info-bullet {
   margin: 5px;

@@ -51,12 +51,12 @@ photo_description_samples = [
   "So glad we got a chance to admire this sight again this year. It feels like forever, but it's totally worth the wait. Hoping to be more regular with posting. We'll see what happens!"
 ]
 
-user1 = User.create(id: 1, username: "DrDemo", email: "demo@gmail.com",
-  password: "demodemo", profile_pic: "1.jpg", cover_photo: "11.jpg",  summary: "I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! I love natures and demos! ")
+user1 = User.create(id: 1, username: "Demo Dog", email: "demo@gmail.com",
+  password: "demodemo", profile_pic: "1.jpg", cover_photo: "11.jpg",  summary: "Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark DEMOS Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark ")
 user2 = User.create(id: 2, username: "MajorTom", email: "majortom@gmail.com" ,
-  password: "groundcontrol", profile_pic: "1.jpg", cover_photo: "n3_dgjs5g.jpg", summary: "I'm stepping through the door, and I'm floating in a most peculiar way, and the stars look very different today")
+  password: "groundcontrol", profile_pic: "0.jpg", cover_photo: "n3_dgjs5g.jpg", summary: "I'm stepping through the door, and I'm floating in a most peculiar way, and the stars look very different today")
 
-Photo.create(id: 1, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "1.jpg")
+Photo.create(id: 1, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "s4.jpg")
 Photo.create(id: 2, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "2.jpg")
 Photo.create(id: 3, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "3.jpg")
 Photo.create(id: 4, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "4.jpg")
@@ -65,7 +65,7 @@ Photo.create(id: 6, user_id: user1.id, title: photo_title_samples.sample, descri
 Photo.create(id: 7, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "7.jpg")
 Photo.create(id: 8, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "8.jpg")
 Photo.create(id: 9, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "9.jpg")
-Photo.create(id: 10, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "10.jpg")
+# Photo.create(id: 10, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "10.jpg")
 Photo.create(id: 11, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "11.jpg")
 Photo.create(id: 12, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "12.jpg")
 Photo.create(id: 13, user_id: user1.id, title: photo_title_samples.sample, description: photo_description_samples.sample, photo_url: "13.jpg")
@@ -91,3 +91,6 @@ Favorite.create(user_id: 1, photo_id: 19)
 Favorite.create(user_id: 1, photo_id: 20)
 Favorite.create(user_id: 1, photo_id: 21)
 Favorite.create(user_id: 1, photo_id: 23)
+
+Follow.create(id: 1, followee_id: 2, follower_id: 1)
+Follow.create(id: 2, followee_id: 1, follower_id: 2)

@@ -12,7 +12,7 @@ var Favorites = React.createClass({
   componentDidMount: function () {
     this.userListener = UserStore.addListener(this._onUserChange);
     this.favoriteListener = FavoriteStore.addListener(this._onFavoritesChange);
-    ApiUtil.fetchUser(this.props.params.userId);
+    // ApiUtil.fetchUser(this.props.params.userId);
   },
 
   componentWillUnmount: function () {

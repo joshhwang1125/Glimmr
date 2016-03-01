@@ -3,11 +3,13 @@ var React = require('react'),
     PhotoStore = require('../../stores/photo_store'),
     SessionStore = require('../../stores/session_store'),
     FavoriteStore = require('../../stores/favorite_store'),
+    FollowStore = require('../../stores/follow_store'),
     hashHistory = require('react-router').hashHistory;
 
 var PhotoShow = React.createClass({
 
   getInitialState: function () {
+    // TODO make default currentPhoto ?
     return {
       currentPhoto: {},
       currentUser: SessionStore.user(),
@@ -16,6 +18,7 @@ var PhotoShow = React.createClass({
   },
 
   componentDidMount: function () {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     this.photoListener = PhotoStore.addListener(this._onPhotosChange);
     this.sessionListener = SessionStore.addListener(this._onSessionChange);
     this.favoriteListener = FavoriteStore.addListener(this._onFavoritesChange);
@@ -67,8 +70,11 @@ var PhotoShow = React.createClass({
 
   handleDeleteClick: function (e) {
     e.preventDefault();
-    ApiUtil.deletePhoto(this.state.currentPhoto.id);
-    hashHistory.push("/");
+    var confirmation = confirm("Are you sure you want to delete this photo?");
+    if (confirmation === true) {
+      ApiUtil.deletePhoto(this.state.currentPhoto.id);
+      hashHistory.push("/");
+    }
     //TODO: callback to rerender index??
   },
 
@@ -97,7 +103,7 @@ var PhotoShow = React.createClass({
 
 
   render: function () {
-    // document.body.scrollTop = document.documentElement.scrollTop = 0;
+
     var url = "http://res.cloudinary.com/dcqvnxgiy/image/upload/";
     var backgroundImage = {backgroundImage: "url('" + url + this.state.currentPhoto.photo_url + "')"}
     var trashcan;
@@ -118,9 +124,9 @@ var PhotoShow = React.createClass({
     return (
       <div >
         <div className="photo-splash" style={backgroundImage}>
-            <label for="img-5" className="prev-next prev" onClick={this.handleNextClick}>‹</label>
+            <label for="img-5" className="prev-next prev" onClick={this.handlePrevClick}>‹</label>
             <div className="delete-container">
-              <label for="img-1" className="prev-next next" onClick={this.handlePrevClick}>›</label>
+              <label for="img-1" className="prev-next next" onClick={this.handleNextClick}>›</label>
 
               {favoriteButton}
               {trashcan}

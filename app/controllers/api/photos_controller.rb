@@ -1,9 +1,9 @@
 class Api::PhotosController < ApplicationController
 
   def index
-    @photos = Photo.all.includes(:user, :favorites)
+    @photos = Photo.includes(:user, :favorites)
     if (params[:currentUserId])
-      @photos = @photos.where(user_id: params[:currentUserId]).includes(:user, :favorites)
+      @photos = @photos.where(user_id: params[:currentUserId])
     end
   end
 
@@ -17,9 +17,9 @@ class Api::PhotosController < ApplicationController
     end
   end
 
-  def show
-    @photo = Photo.find(params[:id])
-  end
+  # def show
+  #   @photo = Photo.includes(:favorites).find(params[:id])
+  # end
 
   def update
     @photo = Photo.find(params[:id])

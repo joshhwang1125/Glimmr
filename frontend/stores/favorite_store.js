@@ -21,16 +21,16 @@ FavoriteStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case FavoriteConstants.All_FAVORITES_RECEIVED:
       resetFavorites(payload.favorites);
-      console.log(payload.favorites);
+      // console.log(payload.favorites);
       FavoriteStore.__emitChange();
       break;
     case FavoriteConstants.NEW_FAVORITE_RECEIVED:
-      console.log(payload.favorite);
+      // console.log(payload.favorite);
       addFavorite(payload.favorite);
       FavoriteStore.__emitChange();
       break;
     case FavoriteConstants.FAVORITE_DELETED:
-      console.log(payload.favorite);
+      // console.log(payload.favorite);
       deleteFavorite(payload.favorite);
       FavoriteStore.__emitChange();
       break;

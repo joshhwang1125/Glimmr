@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :photos, only: [:index, :destroy, :create, :show]
     resources :users, only: [:show]
     resources :favorites, only: [:index, :create, :destroy]
+    resources :follows, only: [:index, :create, :destroy]
   end
 end

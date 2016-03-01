@@ -3,6 +3,7 @@ var PhotoConstants = require('../constants/photo_constants');
 var SessionConstants = require('../constants/session_constants');
 var UserConstants = require('../constants/user_constants');
 var FavoriteConstants = require('../constants/favorite_constants');
+var FollowConstants = require('../constants/follow_constants');
 
 var ApiActions = {
   receiveAllPhotos: function (photos) {
@@ -51,6 +52,27 @@ var ApiActions = {
     AppDispatcher.dispatch({
       actionType: FavoriteConstants.FAVORITE_DELETED,
       favorite: favorite
+    });
+  },
+
+  receiveAllFollows: function (follows) {
+    AppDispatcher.dispatch({
+      actionType: FollowConstants.All_FOLLOWS_RECEIVED,
+      follows: follows
+    });
+  },
+
+  receiveNewFollow: function (follow) {
+    AppDispatcher.dispatch({
+      actionType: FollowConstants.NEW_FOLLOW_RECEIVED,
+      follow: follow
+    });
+  },
+
+  removeFollow: function (follow) {
+    AppDispatcher.dispatch({
+      actionType: FollowConstants.FOLLOW_DELETED,
+      follow: follow
     });
   }
 };

@@ -9,6 +9,7 @@ var React = require('react'),
     ProfileShow = require('./components/profiles/profile_show'),
     UserPhotos = require('./components/profiles/user_photos'),
     Favorites = require('./components/profiles/favorites'),
+    Followees = require('./components/profiles/followees'),
     Info = require('./components/profiles/info'),
     Feed = require('./components/ui/feed');
 
@@ -23,6 +24,7 @@ var routes = (
     <Route path="users/:userId" component={ProfileShow}>
       <Route path="userPhotos" component={UserPhotos} />
       <Route path="favorites" component={Favorites} />
+      <Route path="followees" component={Followees} />
       <Route path="info" component={Info} />
     </Route>
   </Route>
