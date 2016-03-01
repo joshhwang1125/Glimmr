@@ -27,28 +27,22 @@ var Followees = React.createClass({
     this.setState({ profileUser: UserStore.user() });
   },
 
-  handleClick: function (e) {
-    e.preventDefault();
-    hashHistory.push("/users/1/userPhotos");
-    // TODO: set this to actually go to user page
-  },
-
   render: function () {
     var profileUsersFollowees;
 
-    if (this.state.profileUser === undefined){
-      profileUsersFollowees = "loading";
+    if (this.state.profileUser === undefined || this.state.profileUser.followees === undefined){
+      profileUsersFollowees = [];
     } else {
-
       profileUsersFollowees = this.state.profileUser.followees;
       console.log(profileUsersFollowees);
-      // followeePic = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_125,h_125,c_fill/" + this.state.profileUser.profile_pic + "')" };
+
     };
 
     return (
       <div className="follow-grid">
         {profileUsersFollowees.map(function (followee) {
-          return followee.id
+          return <FolloweeItem key={followee.id}
+                               followee={followee}/>
           })
         }
       </div>

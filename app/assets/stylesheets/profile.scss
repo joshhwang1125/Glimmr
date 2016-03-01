@@ -70,17 +70,6 @@
   font-family: Verdana, sans-serif;
 }
 
-.follow-grid {
-  height: 100%;
-  min-height: 500px;
-  width: 100%;
-  background: rgb(232, 232, 232);
-  display:flex;
-  justify-content: flex;
-  padding-top: 15px;
-  padding-bottom: 30px;
-}
-
 
 #user-info-bullet {
   margin: 5px;
@@ -149,3 +138,60 @@
 .create-photo-description {
   width: 550px;
 }
+
+.follow-grid {
+  font-size: 0;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: row;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  display: -webkit-box;
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.followee-container {
+  display: flex;
+  justify-content:center;
+  align-content:center;
+  /*min-width: 850px;*/
+}
+
+
+.followee-pic {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  z-index: 20;
+  position: relative;
+  background-position: center;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.4);
+  bottom: 10px;
+  left: 30px;
+}
+
+.followee-pic:hover {
+  cursor: pointer;
+  opacity: .7;
+  -webkit-transition: all .4s ease;
+     -moz-transition: all .4s ease;
+       -o-transition: all .4s ease;
+      -ms-transition: all .4s ease;
+          transition: all .4s ease;
+}
+
+.followee-username {
+  letter-spacing: .05em;
+  text-shadow:
+    3px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
