@@ -183,6 +183,9 @@
   justify-content: center;
   color: white;
   letter-spacing: .02em;
+  transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
 
 }
 
@@ -196,12 +199,6 @@
           transition: all 0.5s ease-in-out;
 }
 */
-.followee-username {
-  letter-spacing: .05em;
-  text-shadow:
-    3px 3px 2px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-}
 
 .followee-pic:hover {
   -moz-transform: scale(1, 1);
@@ -219,11 +216,9 @@
   -o-transition-duration: 0.8s;
   -webkit-transition-duration: 0.8s;
   transition-duration: 0.8s;
-
-}
-.followee-pic:hover {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
+
 }
 
 .followee-text {
@@ -232,26 +227,20 @@
   font-color: white;
   font-size: 15px;
   text-shadow:
-  3px 3px 2px rgba(0, 0, 0, 0.2);
-  -moz-transform: none;
-  -webkit-transform: none;
-  -o-transform: none;
-  -ms-transform: none;
-  transform: none;
-  -webkit-filter: grayscale(0.0) blur(0px);
-  filter: grayscale(0.0) blur(0px);
+  3px 2px 1.5px rgba(0, 0, 0, 0.8);
+  text-decoration:none;
 
 }
 
 .followee-pic:hover .followee-text {
   visibility: visible;
-  -moz-transform: none;
-  -webkit-transform: none;
-  -o-transform: none;
-  -ms-transform: none;
-  transform: none;
-  -webkit-filter: grayscale(0.0) blur(0px);
-  filter: grayscale(0.0) blur(0px);
+  text-decoration:none;
+
+}
+
+.uploader-pic:hover .followee-text {
+  visibility: visible;
+  text-decoration:none;
 
 }
 

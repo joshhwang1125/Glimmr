@@ -14,11 +14,14 @@
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: flex-start;
-    padding-left: 375px;
-    padding-right: 375px;
+    padding-left: 300px;
+    padding-right: 300px;
      min-width: 850px;
+     width: 100%;
+     height: 100%;
+    font-family:Verdana, sans-serif;
   }
 
 .uploader-pic {
@@ -26,10 +29,18 @@
   width: 150px;
   height: 150px;
   z-index: 20;
+  margin: 0 auto;
 
   background-position: center;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.4);
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  letter-spacing: .02em;
+  transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
 
 }
 
@@ -39,20 +50,23 @@
   padding-bottom: 8px;
   text-shadow:
     2px 2px 1px rgba(0, 0, 0, 0.2);
-  font-size: 20px;
-  font-family: 'Proxima Nova', 'helvetica neue', helvetica, arial, sans-serif;
-  font-weight: 600;
+  font-size: 19px;
 
+  font-weight: 500;
+  text-align: center;
 }
 
 .uploader-title {
+
   letter-spacing: .05em;
-  padding-top: 8px;
+  padding-top: 20px;
   padding-bottom: 8px;
   text-shadow:
     2px 2px 1px rgba(0, 0, 0, 0.2);
-  font-size: 20px;
+  font-size: 30px;
 
+  font-weight: 600;
+  text-align: center;
 }
 
 .uploader-description {
@@ -62,7 +76,9 @@
   text-shadow:
     2px 2px 1px rgba(0, 0, 0, 0.2);
   font-size: 16px;
-
+  /*  font-family: 'Proxima Nova', 'helvetica neue', helvetica, arial, sans-serif;*/
+  font-weight: 400;
+  text-align: center;
 }
 
 .uploader-pic:hover {

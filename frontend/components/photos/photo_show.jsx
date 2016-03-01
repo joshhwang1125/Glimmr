@@ -3,7 +3,6 @@ var React = require('react'),
     PhotoStore = require('../../stores/photo_store'),
     SessionStore = require('../../stores/session_store'),
     FavoriteStore = require('../../stores/favorite_store'),
-    FollowStore = require('../../stores/follow_store'),
     PhotoUploader = require('./photo_uploader'),
     hashHistory = require('react-router').hashHistory;
 
@@ -25,6 +24,7 @@ var PhotoShow = React.createClass({
     this.favoriteListener = FavoriteStore.addListener(this._onFavoritesChange);
 
     ApiUtil.fetchUserFavorites(currentUserId);
+    ApiUtil.fetchFollows(currentUserId);
     ApiUtil.fetchAllPhotos();
     ApiUtil.fetchCurrentUser(currentUserId);
 

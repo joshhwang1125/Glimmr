@@ -9,6 +9,14 @@ FollowStore.all = function () {
   return _follows.slice();
 };
 
+FollowStore.currentUserFollow = function (followeeId) {
+  for (var i = 0; i < _follows.length; i++) {
+    if (_follows[i].followee_id === followeeId && _follows[i].follower_id === currentUserId){
+      return _follows[i].id;
+    }
+  }
+};
+
 
 FollowStore.__onDispatch = function (payload) {
   switch(payload.actionType) {

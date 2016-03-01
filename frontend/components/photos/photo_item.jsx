@@ -10,8 +10,6 @@ var PhotoItem = React.createClass({
     return {
       currentUser: SessionStore.user(),
       favoriteId: FavoriteStore.currentUserFavorite(parseInt(this.props.photo.id))
-
-      // FavoriteStore.currentUserFavorite(parseInt(this.props.photo.id))
     };
   },
   componentDidMount: function () {

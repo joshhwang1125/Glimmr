@@ -2,6 +2,8 @@ var React = require('react'),
     hashHistory = require('react-router').hashHistory;
 
 var FolloweeItem = React.createClass({
+
+
   handleClick: function (e) {
     e.preventDefault();
     hashHistory.push("/users/" + this.props.followee.id + "/userPhotos");
@@ -25,6 +27,3 @@ var FolloweeItem = React.createClass({
 });
 
 module.exports = FolloweeItem;
-
-// <ul class="gallery">
-//   <li><a href="#"><img src="http://dev.steelehouse.com/codepen/game.jpg"/><span class="name">Rexodus<span class="title">Destruction Expert</span></span></a></li>
