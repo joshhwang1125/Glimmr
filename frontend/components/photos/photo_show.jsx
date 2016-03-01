@@ -4,6 +4,7 @@ var React = require('react'),
     SessionStore = require('../../stores/session_store'),
     FavoriteStore = require('../../stores/favorite_store'),
     FollowStore = require('../../stores/follow_store'),
+    PhotoUploader = require('./photo_uploader'),
     hashHistory = require('react-router').hashHistory;
 
 var PhotoShow = React.createClass({
@@ -108,6 +109,7 @@ var PhotoShow = React.createClass({
     var backgroundImage = {backgroundImage: "url('" + url + this.state.currentPhoto.photo_url + "')"}
     var trashcan;
     var favoriteButton;
+    var uploader;
 
     if (this.state.favoriteId === undefined) {
       favoriteButton = (<span className="like-button fa fa-heart fa-4x heart-blank" onClick={this.handleLike}></span>)
@@ -117,7 +119,13 @@ var PhotoShow = React.createClass({
 
     if (this.state.currentPhoto.user_id === currentUserId) {
       trashcan = (<div className="delete-button fa fa-trash fa-4x" onClick={this.handleDeleteClick}></div>)
-    } else { trashcan = <div></div>}
+    } else { trashcan = <div></div>};
+
+    if (this.state.currentPhoto.user_id === undefined) {
+      uploader = (<div className="placeholder"></div>)
+    } else { uploader = <PhotoUploader key={this.state.currentPhoto.user_id}
+                               uploader={this.state.currentPhoto.user}
+                               photo = {this.state.currentPhoto}/>}
 
 
 
@@ -133,13 +141,10 @@ var PhotoShow = React.createClass({
             </div>
 
         </div>
+        <header id="splitter">
+        </header>
         <div className="photo-info">
-          {"Uploader: "}
-          <br/>
-          {"Title: " + this.state.currentPhoto.title}
-          <br/>
-          {"Description: " + this.state.currentPhoto.description}
-          <br/>
+          {uploader}
 
         </div>
       </div>
