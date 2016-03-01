@@ -43,9 +43,13 @@ var PhotoUploader = React.createClass({
     var followBackground;
     var followButton = "";
     uploaderPic = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_155,h_155,c_fill/" + this.props.uploader.profile_pic + "')" };
-    followBackground = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_155,h_155,c_fill/1.jpg')" };
+    followBackground = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_155,h_155,c_fill/14578-green-gradient-1280x800-abstract-wallpaper_cdcg3y.jpg')" };
 
-    if (this.state.followId === undefined) {
+    if (this.props.uploader.id === currentUserId) {
+      followButton = (<div className="self-uploader-pic" style={uploaderPic}>
+
+                      </div>)
+    } else if (this.state.followId === undefined) {
       followButton = (<div className="uploader-pic" style={uploaderPic} onClick={this.handleFollow}>
                         <span className="uploader-text">FOLLOW</span>
                       </div>)
