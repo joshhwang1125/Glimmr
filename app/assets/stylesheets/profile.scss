@@ -45,29 +45,34 @@
   background: rgb(232, 232, 232);
   display:flex;
   justify-content: flex;
-  padding-top: 15px;
-  padding-bottom: 30px;
+  /*padding-top: 15px;*/
+  /*padding-bottom: 30px;*/
 }
 
 .profile-summary {
   position: relative;
-  left:5%;
-  width: 90%;
+  /*left:0.5%;*/
+  width: 100%;
   min-width: 1000px;
   box-sizing: border-box;
   vertical-align: top;
-  border-radius: 15px;
-  background: #F5F5F5;
-  padding-top:50px;
-  padding-bottom:50px;
-  padding-left:70px;
-  padding-right:70px;
+  /*border-radius: 15px;*/
+  background: #19191B;
+  padding-top:30px;
+  padding-bottom:30px;
+  padding-left:50px;
+  padding-right:50px;
+  color: #fff;
+
+
+  font-family: "Lato","Verdana",sans-serif;
 }
 
 .profile-info {
+  color: #fff;
   font-size: 16px;
   font-weight: 400;
-  font-family: Verdana, sans-serif;
+  font-family: "Lato","Verdana",sans-serif;
 }
 
 
@@ -139,6 +144,49 @@
   width: 550px;
 }
 
+.followee-pic {
+  border-radius: 100%;
+  width: 140px;
+  height: 140px;
+  z-index: 20;
+  position: relative;
+  background-position: center;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  letter-spacing: .02em;
+  transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
+
+}
+
+.follow-thumb {
+  /*-webkit-box-flex: auto;*/
+  /*-ms-flex: auto;*/
+  flex: auto;
+
+  width: 140px;
+  height: 240px;
+
+  z-index: 20;
+  padding: 10px;
+  overflow: hidden;
+  text-align: center;
+  /*margin: 0 auto;*/
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.follow-thumb img {
+  width: 100%;
+  height: 100%;
+  border-radius: 150px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 .follow-grid {
   font-size: 0;
   display: -ms-flexbox;
@@ -150,12 +198,12 @@
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
   background-color: #EFEFEF;
-  min-height: 500px;
+  /*min-height: 400px;*/
 
 }
 
@@ -163,8 +211,8 @@
   display: flex;
   justify-content:center;
   align-content:center;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 
   /*min-width: 850px;*/
 }

@@ -14,6 +14,12 @@
   width:100%;
   float:left;
   padding-top:0px;
+  height: 1300px;
+  background-image: url(http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456954496/f5_mvy8h2.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 #form-div {
@@ -159,6 +165,8 @@ input:focus, textarea:focus {
 
 .preview-img {
   height: 100%;
+  max-height: 600px;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 580px) {

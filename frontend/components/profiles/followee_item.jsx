@@ -11,19 +11,32 @@ var FolloweeItem = React.createClass({
   render: function () {
     var followeePic;
 
-    followeePic = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_145,h_145,c_fill/" + this.props.followee.profile_pic + "')" };
+    // followeePic = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_145,h_145,c_fill/" + this.props.followee.profile_pic };
     return (
-      <div className="followee-container">
-        <h1>
-          <div className="followee-pic" style={followeePic} onClick={this.handleClick}>
-            <span className="followee-text">{this.props.followee.username}</span>
+      <div className="follow-thumb nd-wrap nd-style-6" onClick={this.handleClick}>
+        <img src={"http://res.cloudinary.com/dcqvnxgiy/image/upload/w_145,h_145,c_fill/" + this.props.followee.profile_pic }></img>
+        <div className="nd-content">
+          <div className="nd-content_inner">
+            <div className="nd-content_inner1">
+              <h3 className="nd-title"><span>{this.props.followee.username}</span></h3>
+            </div>
           </div>
-
-
-        </h1>
+        </div>
       </div>
     );
   }
 });
 
 module.exports = FolloweeItem;
+
+// <div className="photo-thumb nd-wrap nd-style-6" onClick={this.handleClick}>
+//   <img src={"http://res.cloudinary.com/dcqvnxgiy/image/upload/w_145,h_145,c_fill/" + this.props.followee.profile_pic + "')" }></img>
+//   <div className="nd-content">
+//     <div className="nd-content_inner">
+//       <div className="nd-content_inner1">
+//         <h3 className="nd-title"><span>{this.props.followee.username}</span></h3>
+
+//       </div>
+//     </div>
+//   </div>
+// </div>

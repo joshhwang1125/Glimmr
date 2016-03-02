@@ -56,6 +56,11 @@ var PhotoShow = React.createClass({
     this.setState({ favoriteId: FavoriteStore.currentUserFavorite(parseInt(this.props.params.photoId)) });
   },
 
+  handleBack: function (e) {
+    e.preventDefault();
+    hashHistory.push("/");
+  },
+
   handleNextClick: function (e) {
     //TODO cannot prevent default
     e.preventDefault();
@@ -101,6 +106,15 @@ var PhotoShow = React.createClass({
     ApiUtil.deleteFavorite(this.state.favoriteId);
   },
 
+  handleBack: function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    hashHistory.push("/");
+
+    //TODO: can i go back to the previous page i was on?
+  },
+
 
 
   render: function () {
@@ -110,6 +124,9 @@ var PhotoShow = React.createClass({
     var trashcan;
     var favoriteButton;
     var uploader;
+
+    //TODO: finish back button
+    var backButton = (<span className="like-button fa fa-heart fa-4x heart-blank" onClick={this.handleLike}></span>);
 
     if (this.state.favoriteId === undefined) {
       favoriteButton = (<span className="like-button fa fa-heart fa-4x heart-blank" onClick={this.handleLike}></span>)
@@ -132,7 +149,10 @@ var PhotoShow = React.createClass({
     return (
       <div >
         <div className="photo-splash" style={backgroundImage}>
-            <label for="img-5" className="prev-next prev" onClick={this.handlePrevClick}>‹</label>
+            <div className="delete-container">
+              <span className="back-button fa fa-arrow-left fa-4x" onClick={this.handleBack}></span>
+              <label for="img-5" className="prev-next prev" onClick={this.handlePrevClick}>‹</label>
+            </div>
             <div className="delete-container">
               <label for="img-1" className="prev-next next" onClick={this.handleNextClick}>›</label>
 
