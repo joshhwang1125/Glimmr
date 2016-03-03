@@ -31,3 +31,19 @@ $(function() {
     $('html, body').animate({scrollTop: 855}, 1000);
   });
 });
+
+$(function() {
+  $(".demo-butt").click(function(e) {
+    // e.preventDefault();con
+    $.ajax({
+      url: 'session',
+      type: 'POST',
+      data: {
+        user: {
+          email: "demo@gmail.com",
+          password: "demodemo"
+        }
+      }
+    });
+  });
+});

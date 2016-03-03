@@ -7,6 +7,7 @@ var NavTop = require('./ui/nav_top');
 var App = React.createClass({
   componentWillMount: function () {
     ApiUtil.fetchUserFavorites(currentUserId);
+    ApiUtil.fetchFollows(currentUserId);
   },
 
   render: function () {

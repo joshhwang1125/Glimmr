@@ -1,5 +1,6 @@
 var React = require('react'),
-    FollowStore = require('../../stores/follow_store');
+    FollowStore = require('../../stores/follow_store'),
+    hashHistory = require('react-router').hashHistory;
 
 var PhotoUploader = React.createClass({
   getInitialState: function () {
@@ -38,6 +39,14 @@ var PhotoUploader = React.createClass({
 
     ApiUtil.deleteFollow(this.state.followId);
   },
+
+  handleUploaderClick: function (e) {
+    e.preventDefault();
+
+
+    hashHistory.push("/users/" + this.props.uploader.id + "/userPhotos");
+  },
+
   render: function () {
     var uploaderPic;
     var followBackground;
@@ -54,7 +63,7 @@ var PhotoUploader = React.createClass({
                         <span className="uploader-text">FOLLOW</span>
                       </div>)
     } else {
-      followButton = (<div className="uploader-pic" style={followBackground} onClick={this.handleUnfollow}>
+      followButton = (<div className="uploader-pic" style={uploaderPic} onClick={this.handleUnfollow}>
                         <span className="uploader-text">UNFOLLOW</span>
                       </div>)
     };
@@ -64,7 +73,7 @@ var PhotoUploader = React.createClass({
 
           {followButton}
           <span className="uploader-title">{this.props.photo.title}</span>
-          <span className="uploader-username">{"by " + this.props.uploader.username}</span>
+          <span className="uploader-username" onClick={this.handleUploaderClick}>{"by " + this.props.uploader.username}</span>
           <span className="uploader-description">{this.props.photo.description}</span>
 
       </div>

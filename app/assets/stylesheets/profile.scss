@@ -1,6 +1,6 @@
 .user-cover {
 
-  height: 350px;
+  height: 475px;
   width: 100%;
   max-width: 100%;
   background-position: center;
@@ -60,7 +60,10 @@
   /*background: #19191B;*/
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456965110/gradient2_p4y3pl.jpg);
+  background-image: url(http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456954496/f5_mvy8h2.jpg);
+
+  background-position: 14%;
+  background-position-y: 66%;
   padding-top:30px;
   padding-bottom:30px;
   padding-left:50px;
@@ -171,9 +174,9 @@
 .follow-thumb {
   /*-webkit-box-flex: auto;*/
   /*-ms-flex: auto;*/
-  flex: auto;
+  /*flex: auto;*/
 
-  width: 140px;
+  width: 266px;
   height: 266px;
 
   z-index: 20;
@@ -194,7 +197,7 @@
 
 .follow-grid {
   font-size: 0;
-  display: -ms-flexbox;
+  /*display: -ms-flexbox;
   -ms-flex-wrap: wrap;
   -ms-flex-direction: row;
   -webkit-flex-flow: row wrap;
@@ -202,13 +205,15 @@
   display: -webkit-box;
   display: flex;
   justify-content: flex-start;
-  align-content: flex-start;
+  align-content: flex-start;*/
   padding-left: 1%;
   padding-right: 1%;
   padding-top: 1%;
   padding-bottom: 2%;
+  min-height: 300px;
   /*background-color: #19191B;*/
   background-image: url(http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456954496/f5_mvy8h2.jpg);
+  background-position: 90%;
   /*min-height: 400px;*/
 
 }
@@ -284,6 +289,12 @@
   4px 3px 1.5px rgba(0, 0, 0, 0.8);
   text-decoration:none;
 
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 .followee-pic:hover .followee-text {
@@ -351,6 +362,8 @@
 .uploader-username {
   letter-spacing: .05em;
   padding-top: 20px;
+  display: inline-block;
+  width: 150px;
   padding-bottom: 8px;
   text-shadow:
     2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -359,6 +372,13 @@
   font-weight: 300;
   /*text-align: center;*/
   font-family: 'Proxima Nova', 'helvetica neue', helvetica, arial, sans-serif;
+  transition: 0.3s all ease-in-out;
+}
+
+.uploader-username:hover {
+  text-decoration: none;
+    color: #008AAD;
+    cursor: pointer;
 }
 
 .uploader-title {
@@ -398,5 +418,60 @@
       -ms-transition: all 0.5s ease-in-out;
           transition: all 0.5s ease-in-out;
 }
+
+.follow-button-container {
+/*    display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;*/
+  /*padding-left: 50px;
+  padding-right: 50px;*/
+   min-width: 250px;
+   width: 250px;
+   height: 100%;
+  font-family:Verdana, sans-serif;
+}
+
+.follow-butt {
+  -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  display: inline-block;
+  margin: 20px auto;
+  max-width: 190px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 20px 30px;
+  color: white;
+  box-shadow: white 0 0px 0px 2px inset;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+
+
+  &:focus, &:visited {
+    color: white;
+    text-decoration: none;
+  };
+}
+
+.go-unfollow:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(218, 6, 6, 0.3) 0 0px 0px 40px inset;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.go-follow:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(34, 148, 40, 0.3) 0 0px 0px 40px inset;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
 
 

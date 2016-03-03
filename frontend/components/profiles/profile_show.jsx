@@ -7,6 +7,7 @@ var React = require('react'),
     CoverPhoto = require('./cover_photo'),
     UserPhotos = require('./user_photos'),
     Favorites = require('./favorites'),
+    FollowButton = require('./follow_button'),
     Info = require('./info'),
     hashHistory = require('react-router').hashHistory;
 
@@ -83,15 +84,19 @@ var ProfileShow = React.createClass({
     var backgroundImage;
     var profilePic;
     var createdAtDate;
+    var followButt;
 
     if (this.state.profileUser.id === undefined) {
       createdAtDate = "loading";
+      followButt = (<div className="placeholder"></div>)
       // backgroundImage = "TODO: get default pics";
       // profilePic = "TODO: get default pics";
     } else {
       createdAtDate = this.state.profileUser.created_at.slice(0, 10);
       backgroundImage = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_2000,h_500,c_fill/" + this.state.profileUser.cover_photo + "')" };
       profilePic = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_125,h_125,c_fill/" + this.state.profileUser.profile_pic + "')" };
+      followButt = <FollowButton key={this.state.profileUser.id}
+                               profileUser={this.state.profileUser}/>;
     };
 
     //TODO: center profile pic by adding a div around user-pic
@@ -110,6 +115,8 @@ var ProfileShow = React.createClass({
               Photos {this.state.userPhotos.length}
               <br/>
               Joined {createdAtDate}
+              <br/>
+              {followButt}
             </div>
           </div>
           <header id="profilenav">
