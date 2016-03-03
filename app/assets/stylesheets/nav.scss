@@ -70,7 +70,28 @@ nav {
   };
 }
 
+.navigation input[type=submit] {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 25px;
+  transition: 0.3s all;
+  background: none;
+  border: none;
+  &:focus, &:visited {
+    color: #fff;
+    text-decoration: none;
+  };
+}
+
 .navigation a:hover {
+  background: $lightblue;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navigation input[type=submit]:hover {
   background: $lightblue;
   text-decoration: none;
   color: #fff;

@@ -32,18 +32,18 @@ $(function() {
   });
 });
 
-$(function() {
-  $(".demo-butt").click(function(e) {
-    // e.preventDefault();con
-    $.ajax({
-      url: 'session',
-      type: 'POST',
-      data: {
-        user: {
-          email: "demo@gmail.com",
-          password: "demodemo"
-        }
-      }
-    });
-  });
-});
+// $(function() {
+//   $(".demo-butt").click(function(e) {
+//     // e.preventDefault();con
+//     $.ajax({
+//       url: 'session',
+//       type: 'POST',
+//       data: {
+//         user: {
+//           email: "demo@gmail.com",
+//           password: "demodemo"
+//         }
+//       }
+//     });
+//   });
+// });

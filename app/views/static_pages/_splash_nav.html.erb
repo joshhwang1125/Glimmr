@@ -11,7 +11,8 @@
       <ul>
         <li><a class="welcome-link" href="#">Welcome</a></li>
         <li><a href="#" class="inspire-link">Inspiration</a></li>
-        <li><a href="/session/new" class="demo-butt">Demo</a></li>
+        <!-- <li><a href="/session/new" class="demo-butt">Demo</a></li> -->
+        <li><%= button_to "Demo", session_url, method: :post, params: {"user[email]" => "demo@gmail.com", "user[password]" => "demodemo"} %></li>
         <li><a href="/session/new">Sign In</a></li>
         <li><a id="start" href="/users/new">Get Started</a></li>
       </ul>
