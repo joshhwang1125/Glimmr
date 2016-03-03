@@ -35,7 +35,7 @@ var PhotoUploadForm = React.createClass({
   },
   render: function () {
     var url = "http://res.cloudinary.com/dcqvnxgiy/image/upload/";
-    var photoOptions = "w_300,c_scale/";
+    var photoOptions = "w_350,c_scale/";
     var uploadPhotoButton;
     //TODO: make the preview toggled
 

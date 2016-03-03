@@ -57,12 +57,16 @@
   box-sizing: border-box;
   vertical-align: top;
   /*border-radius: 15px;*/
-  background: #19191B;
+  /*background: #19191B;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456965110/gradient2_p4y3pl.jpg);
   padding-top:30px;
   padding-bottom:30px;
   padding-left:50px;
   padding-right:50px;
   color: #fff;
+  text-shadow: 2px 2px 3px #2c2c2c;
 
 
   font-family: "Lato","Verdana",sans-serif;
@@ -73,6 +77,7 @@
   font-size: 16px;
   font-weight: 400;
   font-family: "Lato","Verdana",sans-serif;
+
 }
 
 
@@ -169,7 +174,7 @@
   flex: auto;
 
   width: 140px;
-  height: 240px;
+  height: 266px;
 
   z-index: 20;
   padding: 10px;
@@ -201,8 +206,9 @@
   padding-left: 1%;
   padding-right: 1%;
   padding-top: 1%;
-  padding-bottom: 1%;
-  background-color: #EFEFEF;
+  padding-bottom: 2%;
+  /*background-color: #19191B;*/
+  background-image: url(http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456954496/f5_mvy8h2.jpg);
   /*min-height: 400px;*/
 
 }
@@ -298,20 +304,20 @@
     flex-direction: column;
     justify-content: center;
     align-content: flex-start;
-    padding-left: 300px;
-    padding-right: 300px;
-     min-width: 850px;
-     width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+     min-width: 450px;
+     width: 50%;
      height: 100%;
     font-family:Verdana, sans-serif;
   }
 
 .uploader-pic {
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   z-index: 20;
-  margin: 0 auto;
+
 
   background-position: center;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.4);
@@ -328,10 +334,10 @@
 
 .self-uploader-pic {
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   z-index: 20;
-  margin: 0 auto;
+
 
   background-position: center;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.6), 2px 2px 3px rgba(0, 0, 0, 0.4);
@@ -349,9 +355,10 @@
   text-shadow:
     2px 2px 1px rgba(0, 0, 0, 0.2);
   font-size: 19px;
-
-  font-weight: 500;
-  text-align: center;
+  color:white;
+  font-weight: 300;
+  /*text-align: center;*/
+  font-family: 'Proxima Nova', 'helvetica neue', helvetica, arial, sans-serif;
 }
 
 .uploader-title {
@@ -362,9 +369,10 @@
   text-shadow:
     2px 2px 1px rgba(0, 0, 0, 0.2);
   font-size: 30px;
-
-  font-weight: 600;
-  text-align: center;
+  color:white;
+  font-weight: 400;
+  /*text-align: center;*/
+  font-family: 'Proxima Nova', 'helvetica neue', helvetica, arial, sans-serif;
 }
 
 .uploader-description {
@@ -375,8 +383,10 @@
     2px 2px 1px rgba(0, 0, 0, 0.2);
   font-size: 16px;
   /*  font-family: 'Proxima Nova', 'helvetica neue', helvetica, arial, sans-serif;*/
-  font-weight: 400;
-  text-align: center;
+  font-weight: 200;
+  /*text-align: center;*/
+  color:white;
+  font-family: 'Proxima Nova', 'helvetica neue', helvetica, arial, sans-serif;
 }
 
 .uploader-pic:hover {

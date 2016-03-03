@@ -120,7 +120,7 @@ var PhotoShow = React.createClass({
   render: function () {
 
     var url = "http://res.cloudinary.com/dcqvnxgiy/image/upload/";
-    var backgroundImage = {backgroundImage: "url('" + url + this.state.currentPhoto.photo_url + "')"}
+    var backgroundImage;
     var trashcan;
     var favoriteButton;
     var uploader;
@@ -142,7 +142,8 @@ var PhotoShow = React.createClass({
       uploader = (<div className="placeholder"></div>)
     } else { uploader = <PhotoUploader key={this.state.currentPhoto.user_id}
                                uploader={this.state.currentPhoto.user}
-                               photo = {this.state.currentPhoto}/>}
+                               photo = {this.state.currentPhoto}/>;
+              backgroundImage = {backgroundImage: "url('" + url + this.state.currentPhoto.photo_url + "')"};}
 
 
 
@@ -151,18 +152,17 @@ var PhotoShow = React.createClass({
         <div className="photo-splash" style={backgroundImage}>
             <div className="delete-container">
               <span className="back-button fa fa-arrow-left fa-4x" onClick={this.handleBack}></span>
-              <label for="img-5" className="prev-next prev" onClick={this.handlePrevClick}>‹</label>
+              <label htmlFor="img-5" className="prev-next prev" onClick={this.handlePrevClick}>‹</label>
             </div>
             <div className="delete-container">
-              <label for="img-1" className="prev-next next" onClick={this.handleNextClick}>›</label>
+              <label htmlFor="img-1" className="prev-next next" onClick={this.handleNextClick}>›</label>
 
               {favoriteButton}
               {trashcan}
             </div>
 
         </div>
-        <header id="splitter">
-        </header>
+
         <div className="photo-info">
           {uploader}
 

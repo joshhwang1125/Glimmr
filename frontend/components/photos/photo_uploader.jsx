@@ -42,7 +42,7 @@ var PhotoUploader = React.createClass({
     var uploaderPic;
     var followBackground;
     var followButton = "";
-    uploaderPic = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_155,h_155,c_fill/" + this.props.uploader.profile_pic + "')" };
+    uploaderPic = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_135,h_135,c_fill/" + this.props.uploader.profile_pic + "')" };
     followBackground = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_155,h_155,c_fill/14578-green-gradient-1280x800-abstract-wallpaper_cdcg3y.jpg')" };
 
     if (this.props.uploader.id === currentUserId) {
