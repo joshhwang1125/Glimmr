@@ -30,20 +30,23 @@ var Favorites = React.createClass({
 
 
   render: function () {
-    var profileUserFavorites;
+    // var profileUserFavorites;
 
-    if (this.state.profileUser.id === undefined) {
-      profileUserFavorites = "loading";
-    } else {
-      profileUserFavorites = (this.state.profileUser.favorited_photos.map(function(photo){
-          return <PhotoItem key={photo.id}
-                            photo={photo}
-                            size={300}/>}))
-    };
+    // if (this.state.profileUser.id === undefined) {
+    //   profileUserFavorites = "loading";
+    // } else {
+    //   profileUserFavorites = (this.state.profileUser.favorited_photos.map(function(photo){
+    //       return <PhotoItem key={photo.id}
+    //                         photo={photo}
+    //                         size={300}/>}))
+    // };
 
     return (
       <div className="profile-feed-grid">
-        { profileUserFavorites }
+        {this.state.profileUser.favorited_photos.map(function(photo){
+          return <PhotoItem key={photo.id}
+                            photo={photo}
+                            size={300}/>})}
 
       </div>
     );

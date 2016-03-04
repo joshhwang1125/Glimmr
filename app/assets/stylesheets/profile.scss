@@ -72,14 +72,14 @@
   /*text-shadow: 2px 2px 3px #2c2c2c;*/
 
 
-  font-family: "Lato","Verdana",sans-serif;
+  font-family: "Lato",sans-serif;
 }
 
 .profile-info {
   color: black;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Lato","Verdana",sans-serif;
+  font-family: "Lato",sans-serif;
 
 }
 
@@ -174,34 +174,51 @@
 .follow-thumb {
   /*-webkit-box-flex: auto;*/
   /*-ms-flex: auto;*/
-  /*flex: auto;*/
-
-  width: 266px;
-  height: 266px;
+  flex: auto;
+  border-radius: 15px;
+  width: 230px;
+  height: 230px;
+  max-width: 290px;
+  max-height: 290px;
 
   z-index: 20;
-  padding: 10px;
+  /*padding: 10px;*/
   overflow: hidden;
   text-align: center;
-  /*margin: 0 auto;*/
+  margin: 10px;
   position: relative;
   display: inline-block;
   cursor: pointer;
+    user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 .follow-thumb img {
+  position:absolute;
   width: 100%;
   height: 100%;
-  border-radius: 150px;
+  top: 0;
+  left: 0;
+  /*height: 100%;*/
+  /*border-radius: 150px;*/
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  -webkit-transition: all 0.75s ease 0.3s;
-  transition: all 0.75s ease 0.3s;
+  -webkit-transition: all 0.85s ease 0.4s;
+  transition: all 0.85s ease 0.4s;
 }
 
 .follow-thumb:hover img {
   filter: gray; /* IE6-9 */
   filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
   -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
-
+  -webkit-transform:scale(1.15); /* Safari and Chrome */
+    -moz-transform:scale(1.15); /* Firefox */
+    -ms-transform:scale(1.15); /* IE 9 */
+    -o-transform:scale(1.15); /* Opera */
+     transform:scale(1.15);
 }
 
 
@@ -330,7 +347,7 @@
      min-width: 450px;
      width: 50%;
      height: 100%;
-    font-family:Verdana, sans-serif;
+    font-family:"Helvetica",sans-serif;
   }
 
 .uploader-pic {
@@ -381,7 +398,7 @@
   color:white;
   font-weight: 300;
   /*text-align: center;*/
-  font-family: 'Proxima Nova', 'helvetica neue', helvetica, arial, sans-serif;
+
   transition: 0.3s all ease-in-out;
 }
 
@@ -402,7 +419,7 @@
   color:white;
   font-weight: 400;
   /*text-align: center;*/
-  font-family: 'Proxima Nova', 'helvetica neue', helvetica, arial, sans-serif;
+
 }
 
 .uploader-description {
@@ -416,7 +433,7 @@
   font-weight: 200;
   /*text-align: center;*/
   color:white;
-  font-family: 'Proxima Nova', 'helvetica neue', helvetica, arial, sans-serif;
+
 }
 
 .uploader-pic:hover {
@@ -440,7 +457,7 @@
    min-width: 250px;
    width: 250px;
    height: 100%;
-  font-family:Verdana, sans-serif;
+  font-family: "Lato",sans-serif;
 }
 
 .follow-butt {
