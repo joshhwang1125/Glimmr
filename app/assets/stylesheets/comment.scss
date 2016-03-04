@@ -1,11 +1,28 @@
-/*@import "bourbon";*/
+@import "bourbon";
 
-/*$ptsans: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+
+
+
+.comment-section {
+
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: row;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  display: -webkit-box;
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+  background: white;
+}
+
+$ptsans: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 $placeholder: #ced2db;
 $text-color: #555f77;
 $links: #0095ff;
 
-html, body {
+/*html, body {
   background-color: #f0f2fa;
   font-family: $ptsans;
   color: $text-color;
@@ -25,7 +42,7 @@ input, textarea {
   @include placeholder {
     color: $placeholder;
   }
-}
+}*/
 
 p {
   line-height: rem(21);
@@ -109,4 +126,4 @@ p {
     }
   }
 }
-*/
+

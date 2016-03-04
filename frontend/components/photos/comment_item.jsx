@@ -3,59 +3,33 @@ var React = require('react'),
     hashHistory = require('react-router').hashHistory;
 
 var CommentItem = React.createClass({
-  getInitialState: function () {
-    return {
-      photoComments: CommentStore.currentPhotoComments(parseInt(this.props.photo.id))
-    };
-  },
-  componentDidMount: function () {
-    this.commentListener = CommentStore.addListener(this._onCommentsChange);
-  },
-  componentWillUnmount: function () {
-    this.commentListener.remove();
-  },
 
-   _onCommentsChange: function () {
-    this.setState({ photoComments: CommentStore.currentPhotoComments(parseInt(this.props.photo.id)) });
-  },
 
 
   render: function () {
-    // var uploaderPic;
-    // var followBackground;
-    // var followButton = "";
-    // uploaderPic = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_135,h_135,c_fill/" + this.props.uploader.profile_pic + "')" };
-    // followBackground = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_155,h_155,c_fill/14578-green-gradient-1280x800-abstract-wallpaper_cdcg3y.jpg')" };
-
-    // if (this.props.uploader.id === currentUserId) {
-    //   followButton = (<div className="self-uploader-pic" style={uploaderPic}>
-
-    //                   </div>)
-    // } else if (this.state.followId === undefined) {
-    //   followButton = (<div className="uploader-pic" style={uploaderPic} onClick={this.handleFollow}>
-    //                     <span className="uploader-text">FOLLOW</span>
-    //                   </div>)
-    // } else {
-    //   followButton = (<div className="uploader-pic" style={uploaderPic} onClick={this.handleUnfollow}>
-    //                     <span className="uploader-text">UNFOLLOW</span>
-    //                   </div>)
-    // };
-
     return (
-      <div>{this.state.photoComments.map(function (comment) {
-              return <div key={comment.id}>
-                      <div>
-                        {comment.user.username}
-                      </div>
-                      <div>
-                        {comment.body}
-                      </div>
-                     </div>
-            })
-          }
-        </div>
+      <div>
+        {this.props.author}
+      </div>
     );
   }
 });
 
 module.exports = CommentItem;
+
+// <div class="comment-wrap">
+//   <div class="photo">
+//     <div class="avatar" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg')"></div>
+//   </div>
+//   <div class="comment-block">
+//       <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus iste nostrum dolorem natus recusandae incidunt voluptatum. Eligendi voluptatum ducimus architecto tempore, quaerat explicabo veniam fuga corporis totam reprehenderit quasi
+//           sapiente modi tempora at perspiciatis mollitia, dolores voluptate. Cumque, corrupti?</p>
+//       <div class="bottom-comment">
+//           <div class="comment-date">Aug 24, 2014 @ 2:35 PM</div>
+//           <ul class="comment-actions">
+//               <li class="complain">Complain</li>
+//               <li class="reply">Reply</li>
+//           </ul>
+//       </div>
+//   </div>
+// </div>

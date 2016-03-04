@@ -1,5 +1,6 @@
 var React = require('react'),
     CommentStore = require('../../stores/comment_store'),
+    CommentItem = require('./comment_item'),
     hashHistory = require('react-router').hashHistory;
 
 var CommentSection = React.createClass({
@@ -42,16 +43,18 @@ var CommentSection = React.createClass({
     // };
 
     return (
-      <div>{this.state.photoComments.map(function (comment) {
+      <div className="comments">
+          TEST
+          {this.state.photoComments.map(function (comment) {
               return <CommentItem key={comment.id}
                     commentId={comment.id}
-                    author={comment.username}
+                    author={comment.user}
                     authorId={comment.user_id}
                     body={comment.body}
                     createdAt={comment.created_at} />;
             })
           }
-        </div>
+      </div>
     );
   }
 });

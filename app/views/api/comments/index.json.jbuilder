@@ -7,6 +7,7 @@ json.array! @comments do |comment|
   json.user do
     json.id comment.user.id
     json.username comment.user.username
+    json.profile_pic comment.user.profile_pic
   end
 
   json.photo do
