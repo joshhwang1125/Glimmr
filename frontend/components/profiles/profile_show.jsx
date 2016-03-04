@@ -76,7 +76,7 @@ var ProfileShow = React.createClass({
   },
 
   //TODO: FIX USER INFO!!
-
+  //TODO: create ability to alter profile summary
 
 
   render: function () {
@@ -94,7 +94,7 @@ var ProfileShow = React.createClass({
     } else {
       createdAtDate = this.state.profileUser.created_at.slice(0, 10);
       backgroundImage = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_2000,h_500,c_fill/" + this.state.profileUser.cover_photo + "')" };
-      profilePic = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_125,h_125,c_fill/" + this.state.profileUser.profile_pic + "')" };
+      profilePic = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_165,h_165,c_fill/" + this.state.profileUser.profile_pic + "')" };
       followButt = <FollowButton key={this.state.profileUser.id}
                                profileUser={this.state.profileUser}/>;
     };

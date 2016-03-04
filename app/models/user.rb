@@ -17,6 +17,7 @@
 class User < ActiveRecord::Base
 
   has_many :photos
+  has_many :comments
   has_many :favorites, dependent: :destroy
   has_many :favorited_photos, through: :favorites, source: :photo
   has_many :follower_tables,

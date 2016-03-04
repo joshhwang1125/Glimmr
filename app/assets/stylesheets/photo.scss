@@ -48,6 +48,9 @@
 .photo-thumb img {
   width: 100%;
   height: auto;
+  -webkit-transition: all 0.85s ease 0.4s;
+  transition: all 0.85s ease 0.4s;
+
 
 }
 
@@ -149,6 +152,17 @@
 .nd-wrap:hover .nd-title {
   opacity: 1;
   top: 0;
+}
+
+.photo-thumb:hover img {
+  filter: gray; /* IE6-9 */
+  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+  -webkit-transform:scale(1.15); /* Safari and Chrome */
+    -moz-transform:scale(1.15); /* Firefox */
+    -ms-transform:scale(1.15); /* IE 9 */
+    -o-transform:scale(1.15); /* Opera */
+     transform:scale(1.15);
 }
 
 .nd-wrap:hover .nd-title {

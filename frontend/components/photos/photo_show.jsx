@@ -3,7 +3,9 @@ var React = require('react'),
     PhotoStore = require('../../stores/photo_store'),
     SessionStore = require('../../stores/session_store'),
     FavoriteStore = require('../../stores/favorite_store'),
+    CommentStore = require('../../stores/comment_store'),
     PhotoUploader = require('./photo_uploader'),
+    CommentSection = require('./comment_section'),
     hashHistory = require('react-router').hashHistory;
 
 var PhotoShow = React.createClass({
@@ -13,7 +15,8 @@ var PhotoShow = React.createClass({
     return {
       currentPhoto: {},
       currentUser: SessionStore.user(),
-      favoriteId: FavoriteStore.currentUserFavorite(parseInt(this.props.params.photoId))
+      favoriteId: FavoriteStore.currentUserFavorite(parseInt(this.props.params.photoId)),
+      currentComments: []
     };
   },
 
@@ -22,10 +25,12 @@ var PhotoShow = React.createClass({
     this.photoListener = PhotoStore.addListener(this._onPhotosChange);
     this.sessionListener = SessionStore.addListener(this._onSessionChange);
     this.favoriteListener = FavoriteStore.addListener(this._onFavoritesChange);
+    this.commentListener = CommentStore.addListener(this._onCommentsChange);
 
     ApiUtil.fetchUserFavorites(currentUserId);
     ApiUtil.fetchFollows(currentUserId);
     ApiUtil.fetchAllPhotos();
+    ApiUtil.fetchAllComments();
     ApiUtil.fetchCurrentUser(currentUserId);
 
     //TODO: should this check to see if logged in?
@@ -35,6 +40,7 @@ var PhotoShow = React.createClass({
     this.photoListener.remove();
     this.sessionListener.remove();
     this.favoriteListener.remove();
+    this.commentListener.remove();
   },
 
   componentWillReceiveProps: function (newProps) {
@@ -54,6 +60,10 @@ var PhotoShow = React.createClass({
 
   _onFavoritesChange: function () {
     this.setState({ favoriteId: FavoriteStore.currentUserFavorite(parseInt(this.props.params.photoId)) });
+  },
+
+  _onCommentsChange: function () {
+    this.setState({ currentComments: CommentStore.all() });
   },
 
   handleBack: function (e) {
@@ -124,6 +134,8 @@ var PhotoShow = React.createClass({
     var trashcan;
     var favoriteButton;
     var uploader;
+    var commentSection;
+
 
     //TODO: finish back button
     var backButton = (<span className="like-button fa fa-heart fa-4x heart-blank" onClick={this.handleLike}></span>);
@@ -139,12 +151,15 @@ var PhotoShow = React.createClass({
     } else { trashcan = <div></div>};
 
     if (this.state.currentPhoto.user_id === undefined) {
-      uploader = (<div className="placeholder"></div>)
+      uploader = (<div className="test"></div>);
+      commentSection = (<div className="test"></div>)
     } else { uploader = <PhotoUploader key={this.state.currentPhoto.user_id}
                                uploader={this.state.currentPhoto.user}
                                photo = {this.state.currentPhoto}/>;
-              backgroundImage = {backgroundImage: "url('" + url + this.state.currentPhoto.photo_url + "')"};}
-
+              backgroundImage = {backgroundImage: "url('" + url + this.state.currentPhoto.photo_url + "')"};
+              commentSection = <CommentSection key={this.state.currentPhoto.id + 100}
+                               photo={this.state.currentPhoto}/>;
+            };
 
 
     return (
@@ -165,7 +180,7 @@ var PhotoShow = React.createClass({
 
         <div className="photo-info">
           {uploader}
-
+          {commentSection}
         </div>
       </div>
     );

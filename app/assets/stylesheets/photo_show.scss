@@ -202,12 +202,16 @@
  cursor: pointer;
 }
 
-#splitter {
-  width: 100%;
-  background: #101010;
-  height: 40px;
-  background: #212124;
-
-
-
-}
+.comment-container {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+    padding-left: 50px;
+    padding-right: 50px;
+     min-width: 450px;
+     width: 50%;
+     height: 100%;
+    font-family:Verdana, sans-serif;
+  }

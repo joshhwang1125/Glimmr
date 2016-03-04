@@ -2,7 +2,7 @@ var splashUrls = ['url("http://res.cloudinary.com/dcqvnxgiy/image/upload/v145662
 'url("http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456620226/s1.jpg")',
 'url("http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456620226/s2.jpg")',
 'url("http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456620226/s3.jpg")',
-'url("http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456620226/s5.jpg")',
+'url("http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456344713/7.jpg")',
 'url("http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456620226/s6.jpg")',
 'url("http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456620226/s7.jpg")',
 'url("http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456620226/s8.jpg")',
@@ -32,18 +32,3 @@ $(function() {
   });
 });
 
-// $(function() {
-//   $(".demo-butt").click(function(e) {
-//     // e.preventDefault();con
-//     $.ajax({
-//       url: 'session',
-//       type: 'POST',
-//       data: {
-//         user: {
-//           email: "demo@gmail.com",
-//           password: "demodemo"
-//         }
-//       }
-//     });
-//   });
-// });

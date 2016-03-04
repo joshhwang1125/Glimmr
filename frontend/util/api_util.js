@@ -26,6 +26,46 @@ var ApiUtil = {
       }
     });
   },
+  fetchAllComments: function(){
+    $.ajax({
+      url: "api/comments",
+      success: function(comments){
+        ApiActions.receiveAllComments(comments);
+      }
+    });
+  },
+  fetchPhotoComments: function(photoId){
+    $.ajax({
+      url: 'api/comments',
+      data: { photoId: photoId },
+      success: function(comments){
+        ApiActions.receiveAllComments(comments);
+      }
+    });
+  },
+  createComment: function(commentParams){
+
+    $.ajax({
+      url: 'api/comments',
+      type: 'POST',
+      dataType: 'json',
+      data: commentParams,
+      success: function(comment){
+        ApiActions.receiveNewComment(comment);
+      }
+    });
+  },
+  deleteComment: function(commentId){
+    $.ajax({
+      url: 'api/comments/' + commentId,
+      type: 'DELETE',
+      dataType: 'json',
+      success: function(comment){
+
+        ApiActions.removeComment(comment);
+      }
+    });
+  },
   fetchUserFavorites: function(userId){
     $.ajax({
       url: 'api/favorites',

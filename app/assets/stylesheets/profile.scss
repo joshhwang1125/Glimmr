@@ -10,8 +10,8 @@
 .user-pic {
 
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   z-index: 20;
   position: relative;
   background-position: center;
@@ -57,26 +57,26 @@
   box-sizing: border-box;
   vertical-align: top;
   /*border-radius: 15px;*/
-  /*background: #19191B;*/
-  background-repeat: no-repeat;
+  background: #DDDDDE;
+/*  background-repeat: no-repeat;
   background-size: cover;
   background-image: url(http://res.cloudinary.com/dcqvnxgiy/image/upload/v1456954496/f5_mvy8h2.jpg);
 
   background-position: 14%;
-  background-position-y: 66%;
-  padding-top:30px;
+  background-position-y: 66%;*/
+  padding-top:40px;
   padding-bottom:30px;
-  padding-left:50px;
-  padding-right:50px;
-  color: #fff;
-  text-shadow: 2px 2px 3px #2c2c2c;
+  padding-left:200px;
+  padding-right:200px;
+  color: black;
+  /*text-shadow: 2px 2px 3px #2c2c2c;*/
 
 
   font-family: "Lato","Verdana",sans-serif;
 }
 
 .profile-info {
-  color: #fff;
+  color: black;
   font-size: 16px;
   font-weight: 400;
   font-family: "Lato","Verdana",sans-serif;
@@ -193,7 +193,17 @@
   height: 100%;
   border-radius: 150px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  -webkit-transition: all 0.75s ease 0.3s;
+  transition: all 0.75s ease 0.3s;
 }
+
+.follow-thumb:hover img {
+  filter: gray; /* IE6-9 */
+  filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+
+}
+
 
 .follow-grid {
   font-size: 0;
