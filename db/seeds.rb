@@ -40,6 +40,29 @@ photo_title_samples = [
   "The Conceptual Eye"
 ]
 
+dog_story = "It must be morning; I’m hungry. Then again, I’m always hungry, so it could really be any time.
+I can hear the shower and feel the sun on my back, so I’m guessing the Boss is awake.
+I lift my head off my bed and look down the passage.
+I want a shower too.
+Sometimes I try and get in but he won’t let me.
+Boring.
+He’s not so happy in the mornings any more.
+He used to be, but things have changed.
+I think it’s stress.
+
+Not really sure what that is, but I know it’s not good.
+It’s a human thing.
+I’ve heard him talk about it on the phone.
+Don’t really know what a phone is either, but I know they’re good to chew.
+Chewing’s one of my favourite things.
+
+I reckon the Boss should lie in the sun with me.
+And chew his foot for a while.
+It’s relaxing.
+It might help with his stress.
+
+Whatever that is."
+
 photo_description_samples = [
   "I was driving down a country road alone and looked to my left and saw this. I knew I had to stop and capture it with my camera.",
   "The north end of Coniston water remains one of my favorite locations. In winter, when the crowds have gone and the only sound is made by the gentle lap of water against the jetty posts, it is a place of peace and tranquility. Note to self: wide angle is called wide angle for a reason.",
@@ -54,7 +77,7 @@ photo_description_samples = [
 ]
 
 user1 = User.create(id: 1, username: "Demo Dog", email: "demo@gmail.com",
-  password: "demodemo", profile_pic: "1.jpg", cover_photo: "11.jpg",  summary: "Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark DEMOS Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark Bark ")
+  password: "demodemo", profile_pic: "1.jpg", cover_photo: "11.jpg",  summary: dog_story)
 user2 = User.create(id: 2, username: "MajorTom", email: "majortom@gmail.com" ,
   password: "groundcontrol", profile_pic: "0.jpg", cover_photo: "n3_dgjs5g.jpg", summary: "I'm stepping through the door, and I'm floating in a most peculiar way, and the stars look very different today")
 user3 = User.create(id: 3, username: "Stewart Butterfield", email: "butterfield@gmail.com" ,

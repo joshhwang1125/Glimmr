@@ -30,8 +30,8 @@
 
 .profile-navigation {
   position:relative;
-  width:624px;
-  min-width: 624px;
+  width:480px;
+  min-width: 480px;
   padding-top:10px;
   padding-bottom:10px;
   display: flex;
@@ -52,7 +52,7 @@
       border: 1px dashed rgba(255,255,255, 0);
       color:#fff;
       padding:10px 0 10px 0;
-      margin:-1px -3px -1px -1px;
+      margin:-1px 1px -1px -1px;
       cursor:pointer;
       transition:all .5s;
       -webkit-transition:all .3s;

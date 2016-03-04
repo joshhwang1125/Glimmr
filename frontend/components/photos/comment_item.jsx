@@ -2,7 +2,7 @@ var React = require('react'),
     CommentStore = require('../../stores/comment_store'),
     hashHistory = require('react-router').hashHistory;
 
-var CommentSection = React.createClass({
+var CommentItem = React.createClass({
   getInitialState: function () {
     return {
       photoComments: CommentStore.currentPhotoComments(parseInt(this.props.photo.id))
@@ -43,12 +43,14 @@ var CommentSection = React.createClass({
 
     return (
       <div>{this.state.photoComments.map(function (comment) {
-              return <CommentItem key={comment.id}
-                    commentId={comment.id}
-                    author={comment.username}
-                    authorId={comment.user_id}
-                    body={comment.body}
-                    createdAt={comment.created_at} />;
+              return <div key={comment.id}>
+                      <div>
+                        {comment.user.username}
+                      </div>
+                      <div>
+                        {comment.body}
+                      </div>
+                     </div>
             })
           }
         </div>
@@ -56,4 +58,4 @@ var CommentSection = React.createClass({
   }
 });
 
-module.exports = CommentSection;
+module.exports = CommentItem;

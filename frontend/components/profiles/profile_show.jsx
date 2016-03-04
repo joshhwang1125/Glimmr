@@ -52,6 +52,7 @@ var ProfileShow = React.createClass({
   },
   handlePhotosClick: function (e) {
     e.preventDefault();
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     this.setState({ activeTab: "photos" });
     hashHistory.push("/users/" + this.state.profileUser.id + "/userPhotos");
     //TODO why is it scrolling back up?
@@ -131,9 +132,7 @@ var ProfileShow = React.createClass({
                   <li data-xcoord="320px" onClick={this.handleFollowingClick}>
                     Following
                   </li>
-                  <li data-xcoord="480px" onClick={this.handleInfoClick}>
-                    Info
-                  </li>
+
                 </ul>
               </nav>
           </header>

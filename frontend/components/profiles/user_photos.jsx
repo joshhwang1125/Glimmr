@@ -45,13 +45,23 @@ var UserPhotos = React.createClass({
   render: function () {
 
     return (
-      <div className="profile-feed-grid">
-        { this.state.userPhotos.map(function (photo) {
-          return <PhotoItem key={photo.id}
-                            photo={photo}
-                            size={300}/>
-          })
-        }
+      <div>
+        <div className="profile-summary-container">
+          <div className="profile-summary">
+            <div>
+              <h1>{this.state.profileUser.username}'s Biography</h1>
+              <div className="profile-info">{this.state.profileUser.summary}</div>
+            </div>
+          </div>
+        </div>
+        <div className="profile-feed-grid">
+          { this.state.userPhotos.map(function (photo) {
+            return <PhotoItem key={photo.id}
+                              photo={photo}
+                              size={300}/>
+            })
+          }
+        </div>
       </div>
     );
   }

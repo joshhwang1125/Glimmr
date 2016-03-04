@@ -7,7 +7,7 @@ var You = React.createClass({
   },
   render: function () {
     return (
-      <li><a onClick={this.onClick}>You</a></li>
+      <li><a onClick={this.onClick}>Profile</a></li>
     );
   }
 });
