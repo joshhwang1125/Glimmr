@@ -3,7 +3,7 @@
 
 
 
-.comment-section {
+/*.comment-section {
 
   display: -ms-flexbox;
   -ms-flex-wrap: wrap;
@@ -15,14 +15,14 @@
   justify-content: flex-start;
   align-content: flex-start;
   background: white;
-}
+}*/
 
 $ptsans: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
 $placeholder: #ced2db;
 $text-color: #555f77;
 $links: #0095ff;
 
-/*html, body {
+html, body {
   background-color: #f0f2fa;
   font-family: $ptsans;
   color: $text-color;
@@ -42,7 +42,7 @@ input, textarea {
   @include placeholder {
     color: $placeholder;
   }
-}*/
+}
 
 p {
   line-height: rem(21);
@@ -50,7 +50,7 @@ p {
 
 .comments {
   margin: rem(40) auto 0;
-  max-width: rem(972);
+  max-width: 650px;
   padding: 0 rem(20);
 }
 
@@ -58,25 +58,33 @@ p {
   margin-bottom: rem(20);
   display: table;
   width: 100%;
-  min-height: rem(85);
+  min-height: rem(100);
 }
 
 .photo {
-  //background-color: #ff6666;
+
   padding-top: rem(10);
   display: table-cell;
-  width: rem(56);
+  width: 75px;
+
 
   .avatar {
-    @include size(rem(36));
-    //background-color: #0094ff;
+    width: 50px;
+    height: 50px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2), 1px 1px 2px rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     background-size: contain;
+    background-position: center;
+  }
+
+  .avatar:hover{
+    cursor: pointer;
   }
 }
 
 .comment-block {
   padding: rem(16);
+  min-width: 550px;
   background-color: #fff;
   display: table-cell;
   vertical-align: top;
@@ -95,7 +103,7 @@ p {
 
 .bottom-comment {
   color: #acb4c2;
-  font-size: rem(14);
+  font-size: 12px;
 }
 
 .comment-date {
@@ -110,14 +118,14 @@ p {
     margin: -2px;
     cursor: pointer;
 
-    &.complain {
+    &.delete-comment {
       padding-right: rem(12);
-      border-right: 1px solid #e1e5eb;
+      /*border-right: 1px solid #e1e5eb;*/
     }
 
     &.reply {
-      padding-left: rem(12);
-      padding-right: rem(2);
+
+      padding-right: rem(12);
     }
 
     &:hover {

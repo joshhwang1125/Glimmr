@@ -44,7 +44,6 @@ var CommentSection = React.createClass({
 
     return (
       <div className="comments">
-          TEST
           {this.state.photoComments.map(function (comment) {
               return <CommentItem key={comment.id}
                     commentId={comment.id}

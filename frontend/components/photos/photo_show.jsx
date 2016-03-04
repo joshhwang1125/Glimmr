@@ -163,8 +163,8 @@ var PhotoShow = React.createClass({
 
 
     return (
-      <div >
-        <div className="photo-splash" style={backgroundImage}>
+      <div className="parallax">
+        <div className="photo-splash parallax__layer parallax__layer--back" style={backgroundImage}>
             <div className="delete-container">
               <span className="back-button fa fa-arrow-left fa-4x" onClick={this.handleBack}></span>
               <label htmlFor="img-5" className="prev-next prev" onClick={this.handlePrevClick}>‹</label>
@@ -178,7 +178,7 @@ var PhotoShow = React.createClass({
 
         </div>
 
-        <div className="photo-info">
+        <div className="photo-info parallax__layer parallax__layer--base">
           {uploader}
           {commentSection}
         </div>

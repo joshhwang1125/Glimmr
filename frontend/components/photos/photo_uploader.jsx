@@ -51,8 +51,8 @@ var PhotoUploader = React.createClass({
     var uploaderPic;
     var followBackground;
     var followButton = "";
-    uploaderPic = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_135,h_135,c_fill/" + this.props.uploader.profile_pic + "')" };
-    followBackground = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_155,h_155,c_fill/14578-green-gradient-1280x800-abstract-wallpaper_cdcg3y.jpg')" };
+    uploaderPic = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_110,h_110,c_fill/" + this.props.uploader.profile_pic + "')" };
+    followBackground = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_110,h_110,c_fill/14578-green-gradient-1280x800-abstract-wallpaper_cdcg3y.jpg')" };
 
     if (this.props.uploader.id === currentUserId) {
       followButton = (<div className="self-uploader-pic" style={uploaderPic}>
@@ -70,10 +70,13 @@ var PhotoUploader = React.createClass({
 
     return (
       <div className="uploader-container">
-
-          {followButton}
-          <span className="uploader-title">{this.props.photo.title}</span>
-          <span className="uploader-username" onClick={this.handleUploaderClick}>{"by " + this.props.uploader.username}</span>
+          <div className="uploader-flex-1">
+            {followButton}
+            <div className="uploader-flex-2">
+              <span className="uploader-title">{this.props.photo.title}</span>
+              <span className="uploader-username" onClick={this.handleUploaderClick}>{"by " + this.props.uploader.username}</span>
+            </div>
+          </div>
           <span className="uploader-description">{this.props.photo.description}</span>
 
       </div>
