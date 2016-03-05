@@ -14,6 +14,9 @@ var PhotoUploadForm = React.createClass({
       flash: ""
     }
   },
+   componentDidMount: function () {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  },
   setPhotoUrl: function (photo) {
     this.setState({ photoUrl: photo[0].path });
   },

@@ -138,7 +138,7 @@ var PhotoShow = React.createClass({
 
 
     //TODO: finish back button
-    var backButton = (<span className="like-button fa fa-heart fa-4x heart-blank" onClick={this.handleLike}></span>);
+
 
     if (this.state.favoriteId === undefined) {
       favoriteButton = (<span className="like-button fa fa-heart fa-4x heart-blank" onClick={this.handleLike}></span>)
