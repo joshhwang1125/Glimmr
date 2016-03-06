@@ -157,7 +157,8 @@ var PhotoShow = React.createClass({
                                photo = {this.state.currentPhoto}/>;
               backgroundImage = {backgroundImage: "url('" + url + this.state.currentPhoto.photo_url + "')"};
               commentSection = <CommentSection key={this.state.currentPhoto.id + 100}
-                               photo={this.state.currentPhoto}/>;
+                               photo={this.state.currentPhoto}
+                               currentUser={this.state.currentUser}/>;
             };
 
 

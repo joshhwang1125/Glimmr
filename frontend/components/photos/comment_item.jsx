@@ -1,5 +1,6 @@
 var React = require('react'),
-    hashHistory = require('react-router').hashHistory;
+    hashHistory = require('react-router').hashHistory,
+    ApiUtil = require('../../util/api_util.js');
 
 var CommentItem = React.createClass({
   handleCommenterClick: function (e) {
