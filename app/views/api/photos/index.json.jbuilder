@@ -5,6 +5,7 @@ json.array! @photos do |photo|
   json.description photo.description
   json.photo_url photo.photo_url
   json.total_favorites photo.favorites.length
+  json.created_at photo.created_at.strftime('%e %b %Y %H:%M:%S%p')
 
   json.user do
     json.id photo.user.id

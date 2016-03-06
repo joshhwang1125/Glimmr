@@ -1,5 +1,6 @@
 var React = require('react'),
     FollowStore = require('../../stores/follow_store'),
+    ApiUtil = require('../../util/api_util.js');
     hashHistory = require('react-router').hashHistory;
 
 var PhotoUploader = React.createClass({

@@ -1,4 +1,5 @@
 var React = require('react'),
+    ApiUtil = require('../../util/api_util.js');
     FollowStore = require('../../stores/follow_store');
 
 var FollowButton = React.createClass({

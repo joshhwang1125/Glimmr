@@ -9,8 +9,8 @@
   display: flex;
   padding-top: 30px;
   padding-bottom: 30px;
-  padding-left: 400px;
-  padding-right: 400px;
+/*  padding-left: 400px;
+  padding-right: 400px;*/
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -233,9 +233,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: flex-start;
-    padding-left: 40px;
-    padding-right: 40px;
+    align-content: center;
+    align-item: center;
+    padding-left: 90px;
+
      min-width: 450px;
      width: 60%;
      height: 100%;

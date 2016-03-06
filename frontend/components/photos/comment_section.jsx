@@ -4,6 +4,12 @@ var React = require('react'),
     CommentForm = require('./comment_form'),
     hashHistory = require('react-router').hashHistory;
 
+Array.prototype.sortBy = function(p) {
+  return this.slice(0).sort(function(a,b) {
+    return (a[p] > b[p]) ? 1 : (a[p] < b[p]) ? -1 : 0;
+  });
+};
+
 var CommentSection = React.createClass({
   getInitialState: function () {
     return {
@@ -22,13 +28,15 @@ var CommentSection = React.createClass({
   },
 
 
+
+
   render: function () {
 
     return (
       <div className="comments">
           <CommentForm photoId={this.props.photo.id}
                         currentUser={this.props.currentUser} />
-          {this.state.photoComments.map(function (comment) {
+          {this.state.photoComments.sortBy('created_at').map(function (comment) {
               return <CommentItem key={comment.id}
                     commentId={comment.id}
                     author={comment.user}

@@ -40,7 +40,7 @@ var Feed = React.createClass({
   render: function () {
     return (
       <div className="feed-grid">
-        { this.state.photos.map(function (photo) {
+        { this.state.photos.sortBy('created_at').map(function (photo) {
           return <PhotoItem key={photo.id}
                             photo={photo}
                             size={300}/>

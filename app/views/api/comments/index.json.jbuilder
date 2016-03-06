@@ -3,6 +3,7 @@ json.array! @comments do |comment|
   json.user_id comment.user_id
   json.photo_id comment.photo_id
   json.body comment.body
+  json.created_at comment.created_at.strftime('%e %b %Y %H:%M:%S%p')
 
   json.user do
     json.id comment.user.id

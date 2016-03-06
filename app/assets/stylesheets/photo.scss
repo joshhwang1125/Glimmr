@@ -44,6 +44,13 @@
   /*margin: 0 auto;*/
   position: relative;
   display: inline-block;
+    user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 .photo-thumb img {
   width: 100%;
