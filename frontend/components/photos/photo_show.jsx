@@ -72,7 +72,7 @@ var PhotoShow = React.createClass({
   },
 
   handleNextClick: function (e) {
-    //TODO cannot prevent default
+
     e.preventDefault();
     var nextPhoto = PhotoStore.next(this.state.currentPhoto);
     hashHistory.push("/photos/" + nextPhoto.id);
@@ -91,7 +91,7 @@ var PhotoShow = React.createClass({
       ApiUtil.deletePhoto(this.state.currentPhoto.id);
       hashHistory.push("/");
     }
-    //TODO: callback to rerender index??
+
   },
 
   handleLike: function (e) {
@@ -122,7 +122,6 @@ var PhotoShow = React.createClass({
 
     hashHistory.push("/");
 
-    //TODO: can i go back to the previous page i was on?
   },
 
 
@@ -137,7 +136,7 @@ var PhotoShow = React.createClass({
     var commentSection;
 
 
-    //TODO: finish back button
+
 
 
     if (this.state.favoriteId === undefined) {

@@ -34,13 +34,13 @@ var PhotoUploadForm = React.createClass({
 
     ApiUtil.createPhoto(photoParams);
     hashHistory.push("/");
-    //TODO: dont go to root page
+
   },
   render: function () {
     var url = "http://res.cloudinary.com/dcqvnxgiy/image/upload/";
     var photoOptions = "w_350,c_scale/";
     var uploadPhotoButton;
-    //TODO: make the preview toggled
+
 
     if (this.state.photoUrl.length > 1) {
       uploadPhotoButton = (

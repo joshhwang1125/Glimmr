@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   validates :email, :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  after_initialize :ensure_session_token, :set_default_pictures
+  after_initialize :ensure_session_token, :set_default_pictures, :set_default_summary
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
@@ -76,5 +76,9 @@ class User < ActiveRecord::Base
     self.profile_pic  ||= "1.jpg"
     self.cover_photo ||= "11.jpg"
 
+  end
+
+  def set_default_summary
+    self.summary ||= "I'm stoked to be using Glimmr!"
   end
 end

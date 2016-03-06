@@ -34,4 +34,4 @@ json.followees @user.followees do |followee|
   json.cover_photo followee.cover_photo
 end
 
-# TODO: FINISH followee
+

@@ -22,6 +22,6 @@ SessionStore.__onDispatch = function (payload) {
   }
 };
 
-window.SessionStore = SessionStore;
+// window.SessionStore = SessionStore;
 
 module.exports = SessionStore;

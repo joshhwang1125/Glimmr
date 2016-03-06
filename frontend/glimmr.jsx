@@ -13,7 +13,7 @@ var React = require('react'),
     Info = require('./components/profiles/info'),
     Feed = require('./components/ui/feed');
 
-window.Dispatcher = require("./dispatcher/dispatcher");
+// window.Dispatcher = require("./dispatcher/dispatcher");
 
 
 var routes = (

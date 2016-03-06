@@ -99,5 +99,5 @@ var ApiActions = {
   }
 };
 
-window.ApiActions = ApiActions;
+// window.ApiActions = ApiActions;
 module.exports = ApiActions;

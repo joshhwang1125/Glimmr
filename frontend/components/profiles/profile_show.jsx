@@ -31,7 +31,7 @@ var ProfileShow = React.createClass({
 
     ApiUtil.fetchCurrentUser(currentUserId);
     ApiUtil.fetchUser(this.props.params.userId);
-    //TODO: should this check to see if logged in?
+
   },
 
   componentWillUnmount: function () {
@@ -55,7 +55,7 @@ var ProfileShow = React.createClass({
     document.body.scrollTop = document.documentElement.scrollTop = 0;
     this.setState({ activeTab: "photos" });
     hashHistory.push("/users/" + this.state.profileUser.id + "/userPhotos");
-    //TODO why is it scrolling back up?
+
   },
 
 
@@ -76,8 +76,7 @@ var ProfileShow = React.createClass({
     hashHistory.push("/users/" + this.state.profileUser.id + "/info");
   },
 
-  //TODO: FIX USER INFO!!
-  //TODO: create ability to alter profile summary
+
 
 
   render: function () {
@@ -90,8 +89,7 @@ var ProfileShow = React.createClass({
     if (this.state.profileUser.id === undefined) {
       createdAtDate = "loading";
       followButt = (<div className="placeholder"></div>)
-      // backgroundImage = "TODO: get default pics";
-      // profilePic = "TODO: get default pics";
+
     } else {
       createdAtDate = this.state.profileUser.created_at.slice(0, 10);
       backgroundImage = { backgroundImage: "url('http://res.cloudinary.com/dcqvnxgiy/image/upload/w_2000,h_500,c_fill/" + this.state.profileUser.cover_photo + "')" };
@@ -100,8 +98,7 @@ var ProfileShow = React.createClass({
                                profileUser={this.state.profileUser}/>;
     };
 
-    //TODO: center profile pic by adding a div around user-pic
-    //TODO: Info instead of create
+
 
 
     return (

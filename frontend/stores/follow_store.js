@@ -22,16 +22,16 @@ FollowStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case FollowConstants.All_FOLLOWS_RECEIVED:
       resetFollows(payload.follows);
-      // console.log(payload.follows);
+
       FollowStore.__emitChange();
       break;
     case FollowConstants.NEW_FOLLOW_RECEIVED:
-      // console.log(payload.follow);
+
       addFollow(payload.follow);
       FollowStore.__emitChange();
       break;
     case FollowConstants.FOLLOW_DELETED:
-      // console.log(payload.follow);
+
       deleteFollow(payload.follow);
       FollowStore.__emitChange();
       break;
@@ -56,6 +56,6 @@ var deleteFollow = function (follow) {
 
 
 
-window.FollowStore = FollowStore;
+// window.FollowStore = FollowStore;
 
 module.exports = FollowStore;

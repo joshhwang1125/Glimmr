@@ -34,7 +34,7 @@ var Followees = React.createClass({
       profileUsersFollowees = [];
     } else {
       profileUsersFollowees = this.state.profileUser.followees;
-      // console.log(profileUsersFollowees);
+
 
     };
 

@@ -46,7 +46,7 @@ PhotoStore.__onDispatch = function (payload) {
       PhotoStore.__emitChange();
       break;
     case PhotoConstants.PHOTO_DELETED:
-      // console.log(payload.photo);
+
       deletePhoto(payload.photo);
       PhotoStore.__emitChange();
       break;
@@ -67,6 +67,6 @@ var resetPhotos = function (photos) {
 
 
 
-window.PhotoStore = PhotoStore;
+// window.PhotoStore = PhotoStore;
 
 module.exports = PhotoStore;

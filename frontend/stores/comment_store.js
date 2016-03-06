@@ -23,16 +23,16 @@ CommentStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case CommentConstants.ALL_COMMENTS_RECEIVED:
       resetComments(payload.comments);
-      console.log(payload.comments);
+
       CommentStore.__emitChange();
       break;
     case CommentConstants.NEW_COMMENT_RECEIVED:
-      console.log(payload.comment);
+
       addComment(payload.comment);
       CommentStore.__emitChange();
       break;
     case CommentConstants.COMMENT_DELETED:
-      console.log(payload.comment);
+
       deleteFavorite(payload.comment);
       CommentStore.__emitChange();
       break;
@@ -57,6 +57,6 @@ var deleteFavorite = function (comment) {
 
 
 
-window.CommentStore = CommentStore;
+// window.CommentStore = CommentStore;
 
 module.exports = CommentStore;
