@@ -112,6 +112,26 @@ p {
   float: left;
 }
 
+
+.bottom-comment input[type=submit] {
+  display: inline;
+  float: right;
+  text-decoration: none;
+  /*padding: 25px;*/
+  transition: 0.3s all;
+  background: none;
+  border: none;
+  &:focus, &:visited {
+    text-decoration: none;
+  };
+}
+
+
+.bottom-comment input[type=submit]:hover {
+  color: $links;
+}
+
+
 .comment-actions {
   float: right;
 
