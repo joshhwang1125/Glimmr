@@ -1,126 +1,58 @@
 # Glimmr
 
-[Heroku link][heroku]
 
-[heroku]: http://www.herokuapp.com
+### [Live Link](http://glimmr.herokuapp.com/)
 
-## Minimum Viable Product
+![Logo](./app/assets/images/screenshot-logo.png)
 
-Glimmr is an image sharing web application inspired by Flickr built using Ruby on Rails and React.js. Glimmr allows users to:
+Glimmr is an image hosting website that allows users to upload pictures of any kind and share them with other Glimmr users. Glimmr was designed with user experience in mind, with the user interface and page responsiveness being two key points of emphasis during development. It is inspired by [Flickr](https://www.flickr.com/).
 
-<!-- This is a Markdown checklist. Use it to keep track of your
-progress. Put an x between the brackets for a checkmark: [x] -->
+## Overview
 
-- [ ] User creation capabilities with secure authentication
+Glimmr is a full-stack web application built from ground up by [Joshua Hwang](https://github.com/joshhwang1125). Glimmr was built using PostgresSLQ, Rails, and React. The site uses the principles of Flux application architecture to achieve unidirectional data flow, which results in ease of debugging and simplification of data flow. Glimmr is built as a single-page app, which provides a fluid and responsive user experience. The user interface is built with custom CSS, resulting in a unique design. A JSON API is used to make efficient database queries, fetching specific data only when necessary.
 
-- [ ] Static splash page prompting user to log in, and explanation of site vision
+## Features
 
-- [ ] Photo uploading, viewing, editing, sharing, deleting capabilties
+### Splash
 
-- [ ] Camera roll - Contains all photos uploaded by user, can be selected and added to album or deleted (shared, downloaded)
+![Splash](./app/assets/images/screenshot-splash.png)
 
-- [ ] Tag photo
+### Login
 
-- [ ] Create and delete comments for photos
+![Login](./app/assets/images/screenshot-login.png)
 
-- [ ] Follow other users
+### Photostream
 
-- [ ] Individual photo view pages
+![Photostream](./app/assets/images/screenshot-photostream.png)
 
-- [ ] Favorite photo - adds to favorites page
+![Fadein](./app/assets/images/screenshot-fadein.png)
 
-- [ ] Search functionality: using tags, uploader, or group
+![Dynamic](./app/assets/images/screenshot-dynamic.png)
 
-- [ ] Setting locations for photos
+### Upload
 
-- [ ] Navigation in individual photo view page with hotkeys
+![Upload1](./app/assets/images/screenshot-upload1.png)
 
-- [ ] Activity feed page on log in with stream of photos to see and notifications
+![Upload2](./app/assets/images/screenshot-upload2.png)
 
-
-## Design Docs
-* [View Wireframes][views]
-* [React Components][components]
-* [Flux Stores][stores]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-
-[views]: ./docs/views.md
-[components]: ./docs/components.md
-[stores]: ./docs/stores.md
-[api-endpoints]: ./docs/api-endpoints.md
-[schema]: ./docs/schema.md
-
-## Implementation Timeline
-
-### Phase 1: Backend setup and User Authentication (1.0 days)
-
-**Objective:** Functioning rails project with Authentication
-
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank splash page
-- [ ] blank landing page after signin
-- [ ] create photos index layout
-- [ ] create user profile layout
-- [ ] create `Photo` model
-
-### Phase 2: Photo Model and Flux Initialization (1.5 days)
-
-**Objective:** Photos can be created, read, edited and destroyed through
-the API.
-
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for photos (`PhotosController`)
-- [ ] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
-- [ ] Set up Photo Store
-- [ ] Set up React views for photo Index and IndexItem
-- [ ] Clicking on photo should bring user to photo show page
-- [ ] Style these
-
-### Phase 3: favorites, followers, comments (1 days)
+![Uploaded](./app/assets/images/screenshot-uploaded.png)
 
 
-- [ ] Users can follow other users, and see their profiles
-- [ ] Users can tag their own photos, and these tags will show on the photo show page.
-- [ ] A favorites page will have a photo feed with all favorited photos
+### Profile
 
+![ProfileSplash](./app/assets/images/screenshot-profile-splash.png)
 
-### Phase 4: tags and Search (1.5 days)
+![Photos](./app/assets/images/screenshot-profile-photos.png)
 
+![Favorites](./app/assets/images/screenshot-favorites.png)
 
-- [ ] create `Album` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for albums (`AlbumsController`)
-- [ ] create `Group` model
-- [ ] seed the database with a small amount of test data
-- [ ] CRUD API for groups (`GroupsController`)
-- [ ] Both albums and groups will have show pages that have many photos, like the photo index view
-- [ ] Can see users in a group, and make comments on the group.
-- [ ] Photos are destroyed when deleted from any location
+![Following](./app/assets/images/screenshot-following.png)
 
+### Photoview
 
+![Photoview](./app/assets/images/screenshot-photoview.png)
 
-### Phase 5: Styling and Bug Fixing (2 days)
+![Comments1](./app/assets/images/screenshot-photoview.png)
 
-- [ ] Finish CSS styling
-- [ ] Create seed data and set up environment
-- [ ] Double check that all features work
+![Comments2](./app/assets/images/screenshot-comments2.png)
 
-### Bonus: Search and Location (2 day)
-- [ ] Add search bar
-- [ ] Add Locations
-- [ ] Mosiac picture pattern
-- [ ] Multiple sessions
-- [ ] Create the feed
-
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
